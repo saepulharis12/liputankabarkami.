@@ -1,0 +1,41 @@
+# ===========================================================================
+# wrangler.toml — konfigurasi Cloudflare Workers untuk LIPUTAN INEWS HRS.GRUP
+# ===========================================================================
+# Nama Worker ini HARUS sama dengan nama Worker yang sudah ada di akun
+# Cloudflare Anda (terlihat dari alamat: liputan-inewsid.harissaepul50.workers.dev).
+# Jangan mengganti "name" agar deployment tetap masuk ke Worker yang sama.
+name = "liputan-inewsid"
+
+# File Worker yang memproses permintaan (menyuntikkan meta Open Graph artikel).
+main = "worker.js"
+
+# Tanggal kompatibilitas runtime Cloudflare Workers.
+compatibility_date = "2025-05-05"
+
+# ---------------------------------------------------------------------------
+# ASET STATIS (Static Assets): seluruh isi folder ini di-upload sebagai file
+# website. Folder "./" = akar repo GitHub, karena index.html & foto berada
+# langsung di akar repo. File yang tidak boleh ikut ter-Upload (kode worker,
+# konfigurasi, panduan) disaring lewat file ".assetsignore".
+# ---------------------------------------------------------------------------
+[assets]
+directory = "./"
+binding = "ASSETS"
+
+# Jika file tidak ditemukan (mis. salah ketik alamat), halaman utama tetap
+# ditampilkan untuk permintaan halaman — sesuai perilaku aplikasi satu halaman.
+not_found_handling = "single-page-application"
+
+# WAJIB true: semua permintaan dilewati dulu ke worker.js agar worker bisa
+# menyuntikkan meta Open Graph ke HTML artikel sebelum dikirim ke bot/visitor.
+# Tanpa ini, halaman dilayani langsung tanpa meta artikel dan pratinjau sosial
+# tidak akan muncul. Gambar & file lain tetap cepat karena worker langsung
+# meneruskannya tanpa diproses.
+run_worker_first = true
+
+# ---------------------------------------------------------------------------
+# Catatan observabilitas (opsional, tidak wajib):
+# [observability] enabled = true membantu melihat log error worker di dashboard.
+# ---------------------------------------------------------------------------
+[observability]
+enabled = true

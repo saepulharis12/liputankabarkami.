@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="google-site-verification" content="jyeQKOUEUAoctaxuA9DYhYC8a6lDv1VFy5yDo6g_Vuo"/>
+<title>LIPUTAN INEWS HRS.GRUP - Portal Berita Nasional</title>
+<meta name="description" content="LIPUTAN INEWS HRS.GRUP - Portal berita Indonesia dengan liputan terkini dari 38 provinsi." />
+
+<!-- ===== OPEN GRAPH & TWITTER CARD DEFAULT (halaman utama). =====
+     Untuk halaman artikel, worker.js otomatis MENGGANTI blok ini di sisi server
+     dengan judul, deskripsi, dan foto sesuai artikel yang dibagikan. ===== -->
+<meta property="og:site_name" content="LIPUTAN INEWS HRS.GRUP" />
+<meta property="og:title" content="LIPUTAN INEWS HRS.GRUP - Portal Berita Nasional" />
+<meta property="og:description" content="LIPUTAN INEWS HRS.GRUP - Portal berita Indonesia dengan liputan terkini dari 38 provinsi." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://liputan-inewsid.harissaepul50.workers.dev/" />
+<meta property="og:image" content="https://liputan-inewsid.harissaepul50.workers.dev/logo-liputan-news.png" />
+<meta property="og:image:alt" content="LIPUTAN INEWS HRS.GRUP" />
+<meta property="og:locale" content="id_ID" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="LIPUTAN INEWS HRS.GRUP - Portal Berita Nasional" />
+<meta name="twitter:description" content="LIPUTAN INEWS HRS.GRUP - Portal berita Indonesia dengan liputan terkini dari 38 provinsi." />
+<meta name="twitter:image" content="https://liputan-inewsid.harissaepul50.workers.dev/logo-liputan-news.png" />
+<link rel="canonical" href="https://liputan-inewsid.harissaepul50.workers.dev/" />
+
+<!-- ===== FAVICON & IDENTITAS WEBSITE ===== -->
+<link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+<link rel="apple-touch-icon" sizes="512x512" href="favicon.png">
+<meta name="application-name" content="LIPUTAN INEWS HRS.GRUP">
+<meta name="apple-mobile-web-app-title" content="LIPUTAN INEWS HRS.GRUP">
+
+<!-- ===== STRUCTURED DATA SCHEMA.ORG (alamat website sudah dikonfigurasi) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "name": "LIPUTAN INEWS HRS.GRUP",
+  "url": "https://liputan-inewsid.harissaepul50.workers.dev",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://liputan-inewsid.harissaepul50.workers.dev/logo-liputan-news.png",
+    "width": 512,
+    "height": 512
+  }
+}
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { serif:['Newsreader','Georgia','serif'], sans:['Inter','Arial','sans-serif'] },
+  colors: { paper:'#F7F4EE', paperDark:'#EEE9DF' }
+}}};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700;6..72,800&display=swap" rel="stylesheet">
+<style>
+  html,body,#root{width:100%;min-height:100%;margin:0;padding:0;overflow-x:hidden;}
+  *{box-sizing:border-box;} img{max-width:100%;}
+  body{background:#F7F4EE;color:#292524;font-family:Inter,Arial,sans-serif;}
+  .no-scrollbar::-webkit-scrollbar{display:none;} .no-scrollbar{-ms-overflow-style:none;scrollbar-width:none;}
+  .dropcap::first-letter{float:left;font-family:Georgia,serif;font-size:3.6rem;line-height:.85;font-weight:800;padding-right:.5rem;padding-top:.2rem;color:#1c1917;}
+  .break-anywhere{overflow-wrap:anywhere;word-break:break-word;}
+  @media (max-width:640px){.dropcap::first-letter{font-size:2.8rem;}}
+  @keyframes ticker-move{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+  .ticker-track{display:inline-flex;white-space:nowrap;will-change:transform;animation:ticker-move 45s linear infinite;}
+  .ticker-wrap:hover .ticker-track{animation-play-state:paused;}
+  @media (prefers-reduced-motion:reduce){.ticker-track{animation:none;}}
+  @keyframes live-pulse{0%,100%{opacity:1;}50%{opacity:.25;}}
+  .live-dot{animation:live-pulse 1.2s ease-in-out infinite;}
+  @keyframes toast-in{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+  .toast-in{animation:toast-in .3s ease-out;}
+
+  /* ===== LOGO ANIMASI (masuk + melayang + kilatan cahaya) ===== */
+  .logo-anim{position:relative;display:inline-flex;overflow:hidden;vertical-align:middle;animation:logoIntro 1.5s cubic-bezier(.16,1,.3,1) forwards;}
+  .logo-anim img{position:relative;z-index:2;display:block;animation:logoFloat 7s ease-in-out 1.5s infinite;}
+  .logo-anim::after{
+    content:"";position:absolute;top:-60%;left:-90%;width:20%;height:220%;
+    background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.02) 20%,rgba(255,255,255,0.15) 35%,rgba(255,255,255,0.45) 45%,rgba(255,255,255,0.95) 50%,rgba(255,255,255,0.45) 55%,rgba(255,255,255,0.15) 65%,rgba(255,255,255,0.02) 80%,transparent 100%);
+    transform:skewX(-18deg);filter:blur(4px);opacity:0;z-index:5;pointer-events:none;
+    animation:whiteShine 10s ease-in-out infinite;
+  }
+  @keyframes logoIntro{
+    0%{opacity:0;transform:scale(0.70) translateY(25px);filter:blur(10px);}
+    55%{opacity:1;transform:scale(1.04) translateY(0);filter:blur(0);}
+    75%{transform:scale(0.99) translateY(0);}
+    100%{opacity:1;transform:scale(1) translateY(0);filter:blur(0);}
+  }
+  @keyframes logoFloat{
+    0%{transform:translateY(0) scale(1);}
+    50%{transform:translateY(-4px) scale(1.005);}
+    100%{transform:translateY(0) scale(1);}
+  }
+  @keyframes whiteShine{
+    0%{left:-90%;opacity:0;}
+    12%{left:-75%;opacity:0;}
+    20%{left:-55%;opacity:0.35;}
+    32%{left:-20%;opacity:0.75;}
+    48%{left:35%;opacity:1;}
+    64%{left:80%;opacity:0.7;}
+    75%{left:120%;opacity:0;}
+    100%{left:140%;opacity:0;}
+  }
+  @media (prefers-reduced-motion:reduce){.logo-anim,.logo-anim img,.logo-anim::after{animation:none;}}
+</style>
+</head>
+<body>
+<div id="root">
+  <div id="boot-msg" style="padding:40px;font-family:Arial;text-align:center;">
+    <b>LUPUTAN INEWS…</b><br/><span style="color:#78716c;font-size:13px;">Sedang menyiapkan infomasi.</span>
+  </div>
+</div>
+<script>
+  window.addEventListener('error', function(ev){
+    var m = document.getElementById('boot-msg');
+    if (m) m.innerHTML =
+      '<div style="background:#fef2f2;border:1px solid #fca5a5;color:#b91c1c;padding:16px;border-radius:12px;max-width:640px;margin:0 auto;text-align:left;">'+
+      '<b>Gagal memuat website.</b><br/>'+(ev && ev.message ? ev.message : 'Script error.')+
+      '<br/><br/>Kemungkinan koneksi internet terputus saat memuat. Muat ulang halaman.</div>';
+  });
+</script>
+
+<!-- ============================================================
+     ★★★ DATA BERITA — TAMBAH BERITA BARU DI SINI ★★★
+
+   CARA AMAN:
+   1. Kolom isi SELALU diapit backtick  ` ... `
+   2. Antar berita dipisah KOMA:  },  lalu  {
+   3. Berita paling akhir TANPA koma
+
+   TENANG — kalau ada koma atau backtick yang keliru,
+   website OTOMATIS memperbaikinya dan berita tetap dimuat.
+   ============================================================ -->
+<script id="berita-data-src">
+window.BERITA_DATA = [
+  {
+    judul: "Santunan Anak Yatim dan Janda Warnai Peringatan HUT ke-43 Desa",
+    tanggal: "28 September 2026",
+    kategori: "Berita Desa",
+    foto: "https://raw.githubusercontent.com/saepulharis12/liputan-inews.id/8563df7c2c14be0dae1708eac72ddf726dce7cda/santunan%20hut%20desa%2043.jpg",
+    isi: `Santunan Anak Yatim dan Janda Warnai Peringatan HUT ke-43 Desa Marga Mulya
+
+TANGERANG — Rangkaian peringatan Hari Ulang Tahun (HUT) ke-43 Desa Marga Mulya, Kecamatan Mauk, Kabupaten Tangerang, diisi dengan kegiatan sosial berupa pembagian santunan kepada anak yatim dan janda.
+
+Kegiatan santunan tersebut menjadi salah satu bagian dari rangkaian peringatan hari jadi desa. Pemerintah Desa Marga Mulya bersama masyarakat dan pihak-pihak yang terlibat dalam kegiatan memberikan bantuan kepada para penerima santunan.
+
+Pembagian santunan berlangsung dalam suasana penuh kebersamaan. Anak-anak yatim serta para janda yang hadir menerima bantuan sebagai bentuk kepedulian sosial dalam momentum peringatan HUT Desa Marga Mulya.
+
+Selain menjadi bagian dari perayaan hari jadi desa, kegiatan tersebut juga menjadi momentum untuk memperkuat kepedulian dan solidaritas sosial di tengah masyarakat. Keterlibatan berbagai unsur masyarakat menunjukkan adanya semangat kebersamaan dalam menyukseskan rangkaian kegiatan HUT desa.
+
+Pemerintah Desa Marga Mulya berharap kegiatan sosial seperti santunan dapat terus menjadi bagian dari semangat kebersamaan masyarakat. Peringatan HUT ke-43 pun tidak hanya diisi dengan kegiatan hiburan dan budaya, tetapi juga dengan kegiatan yang memberikan manfaat langsung bagi masyarakat.
+
+Rangkaian peringatan HUT Desa Marga Mulya kemudian dilanjutkan dengan berbagai kegiatan lainnya yang melibatkan masyarakat serta mengangkat potensi dan budaya lokal desa.
+
+(Redaksi/Reporter).`
+  },
+  {
+    judul: "Rumah di Gunung Sari Mauk Terbakar, Diduga Dipicu Korsleting Listrik",
+    tanggal: "2 Oktober 2026",
+    kategori: "Peristiwa",
+    foto: "https://raw.githubusercontent.com/saepulharis12/liputan-inews.id/8563df7c2c14be0dae1708eac72ddf726dce7cda/kebakaran%20rumah%20di%20gunung%20sari%20Mauk.png",
+    isi: `Dua Rumah di Gunung Sari Mauk Terbakar, Diduga Dipicu Korsleting Listrik
+
+TANGERANG — Dua rumah warga di kawasan Gunung Sari, Kecamatan Mauk, Kabupaten Tangerang, terbakar. Diduga kuat kebakaran dipicu oleh korsleting listrik.
+
+Peristiwa berlangsung cepat. Api menjalar dari salah satu rumah dan merambat ke bangunan di sebelahnya karena materi bangunan yang mudah terbakar.
+
+Warga sekitar berupaya memadamkan api dengan alat seadanya sebelum tim pemadam kebakaran tiba di lokasi. Tidak ada laporan korban jiwa dalam peristiwa ini, namun sebagian harta benda warga diperkirakan musnah terbakar.
+
+Pihak berwenang masih melakukan pemeriksaan di lokasi untuk memastikan penyebab pasti kebakaran. Sementara itu, warga korban mendapat bantuan sementara dari pemerintah desa dan warga sekitar.
+
+Masyarakat diimbau untuk lebih waspada terhadap penggunaan listrik di rumah, terutama saat meninggalkan rumah dalam waktu lama.
+
+(Redaksi/Reporter).`
+  },
+  {
+    judul: "Ruwatan Bumi Warnai HUT ke-43 Desa Marga Mulya Mauk",
+    tanggal: "28 September 2026",
+    kategori: "Berita Desa",
+    foto: "https://raw.githubusercontent.com/saepulharis12/liputan-inews.id/8563df7c2c14be0dae1708eac72ddf726dce7cda/foto%20Hut%20desa%2043.jpg",
+    isi: `Ruwatan Bumi Warnai HUT ke-43 Desa Marga Mulya Mauk
+
+TANGERANG — Pemerintah Desa Marga Mulya, Kecamatan Mauk, Kabupaten Tangerang, menggelar Ruwatan Bumi sebagai bagian dari rangkaian peringatan Hari Ulang Tahun (HUT) ke-43 Desa Marga Mulya.
+
+Kegiatan tersebut berlangsung meriah dengan melibatkan masyarakat desa. Salah satu rangkaian acara yang menjadi perhatian warga adalah kirab dan karnaval hasil bumi yang menampilkan berbagai potensi serta hasil pertanian masyarakat.
+
+Ruwatan Bumi merupakan tradisi yang menjadi bagian dari kehidupan sosial masyarakat setempat. Selain menjadi ungkapan rasa syukur atas hasil bumi, kegiatan tersebut juga menjadi ruang bagi warga untuk berkumpul dan mempererat hubungan antarmasyarakat.
+
+Kepala Desa Marga Mulya, Abu Bakar, hadir dalam kegiatan tersebut bersama jajaran pemerintah desa dan masyarakat. Perayaan HUT ke-43 sekaligus menjadi momentum untuk melihat perjalanan pembangunan Desa Marga Mulya serta memperkuat kebersamaan dalam menjalankan berbagai program pembangunan desa.
+
+Antusiasme masyarakat terlihat sepanjang rangkaian kegiatan. Warga turut berpartisipasi dalam kirab dengan membawa hasil bumi dan berbagai bentuk kreasi yang menggambarkan potensi desa.
+
+Peringatan HUT ke-43 Desa Marga Mulya tidak hanya menjadi agenda seremonial, tetapi juga menjadi momentum untuk mempertahankan tradisi lokal sekaligus memperkuat partisipasi masyarakat dalam pembangunan desa.
+
+Melalui kegiatan tersebut, Pemerintah Desa Marga Mulya mengajak masyarakat untuk terus menjaga kebersamaan, melestarikan budaya lokal, serta mendukung pembangunan desa secara berkelanjutan.
+
+(Redaksi/Reporter).`
+},
+  {
+    judul: "Warga Desa Marga Mulya Gelar Nobar Indonesia vs Thailand, Suasana Meriah dan Penuh Semangat",
+    tanggal: "Senin, 5 Oktober 2026.",
+    kategori: "Berita Desa",
+    foto: "https://raw.githubusercontent.com/saepulharis12/liputan-inews.id/8563df7c2c14be0dae1708eac72ddf726dce7cda/Marga%20Mulya%20nobar.png",
+    isi: `Warga Desa Marga Mulya Gelar Nobar Indonesia vs Thailand, Suasana Meriah dan Penuh Semangat
+
+TANGERANG, Kabupaten Tangerang, Provinsi Banten — Antusiasme masyarakat terhadap Timnas Indonesia terlihat lagi di Desa Marga Mulya, Kecamatan Mauk, Kabupaten Tangerang, Provinsi Banten. Warga di lingkungan RT 004/RW 001 menggelar kegiatan nonton bareng (nobar) pertandingan Indonesia vs Thailand pada Senin malam.
+
+Kegiatan nobar tersebut berlangsung meriah. Warga tampak berkumpul bersama untuk menyaksikan perjuangan Skuad Garuda melalui layar yang telah disiapkan di lokasi kegiatan.
+
+Sejak sebelum pertandingan dimulai, suasana di sekitar lokasi sudah terlihat ramai. Warga berdatangan untuk ikut menyaksikan pertandingan sekaligus berkumpul bersama dengan tetangga dan masyarakat sekitar.
+
+Begitu pertandingan dimulai, perhatian warga langsung tertuju ke layar. Jalannya pertandingan disaksikan dengan penuh antusias. Sorakan dan tepuk tangan terdengar ketika Timnas Indonesia menciptakan peluang maupun ketika terjadi momen-momen penting di dalam pertandingan.
+
+Nobar Jadi Ajang Silaturahmi Warga
+
+Selain menjadi sarana untuk memberikan dukungan kepada Timnas Indonesia, kegiatan nobar juga menjadi momentum bagi warga RT 004/RW 001 untuk mempererat tali silaturahmi.
+
+Warga yang biasanya menjalani aktivitas masing-masing dapat berkumpul dalam satu tempat dan menikmati pertandingan bersama. Suasana kekeluargaan pun semakin terasa sepanjang kegiatan berlangsung.
+
+Pertandingan sepak bola menjadi semakin menarik ketika disaksikan bersama. Setiap peluang yang diciptakan Indonesia maupun tekanan dari lawan mendapat respons dari para penonton.
+
+Dukungan terhadap Timnas Indonesia pun terus diberikan sepanjang pertandingan. Semangat warga menunjukkan bahwa kecintaan terhadap sepak bola nasional tidak hanya dirasakan oleh masyarakat di kota-kota besar, tetapi juga sampai ke lingkungan permukiman dan desa.
+
+Semangat Dukung Timnas Indonesia
+
+Nobar Indonesia vs Thailand di RT 004/RW 001 Desa Marga Mulya menjadi salah satu bentuk dukungan masyarakat terhadap perjuangan Timnas Indonesia.
+
+Kegiatan tersebut juga memperlihatkan bagaimana sepak bola dapat menjadi sarana untuk menyatukan masyarakat. Perbedaan aktivitas dan latar belakang warga seolah melebur ketika bersama-sama memberikan dukungan kepada tim kebanggaan Indonesia.
+
+Suasana meriah tetap terasa selama pertandingan berlangsung. Warga tampak menikmati pertandingan dengan penuh semangat hingga laga selesai.
+
+Dengan adanya kegiatan seperti ini, masyarakat tidak hanya mendapatkan hiburan, tetapi juga memperoleh kesempatan untuk mempererat kebersamaan dan menjaga hubungan baik antarwarga.
+
+Nobar di RT 004/RW 001, Desa Marga Mulya, Kecamatan Mauk, Kabupaten Tangerang, Provinsi Banten, akhirnya menjadi bagian dari semarak dukungan masyarakat terhadap Timnas Indonesia.
+
+Dari lingkungan warga, semangat untuk Garuda terus berkobar.
+
+Saepul Haris : (Redaksi).`
+  },
+  
+
+
+{
+  judul: "Puluhan Tahun Jadi Pedagang Asongan, Pak Mahmud Tetap Mengayuh Sepeda di Usia Senja Demi Nafkah dan Merawat Istri yang Stroke",
+  tanggal: "19 Oktober 2026",
+  kategori: "Berita Daerah",
+  foto: "https://raw.githubusercontent.com/saepulharis12/liputan-inews.id/main/penjual%20asongan%2001.jpg",
+  isi: `30 Tahun Mengayuh Perjuangan, Pak Mahmud Tak Menyerah! Di Usia Senja, Ia Tetap Mencari Nafkah Sambil Merawat Istri yang Stroke
+
+MAUK, KABUPATEN TANGERANG, BANTEN — Usia senja tak lantas membuat Pak Mahmud berhenti berjuang. Selama lebih dari 30 tahun, ia menjalani kehidupan sebagai pedagang asongan dengan penghasilan yang tak menentu. Hingga kini, ia masih berusaha mencari nafkah demi memenuhi kebutuhan hidup keluarganya.
+
+Namun, di balik perjuangannya mencari sesuap nasi, ada ujian berat yang harus ia hadapi. Sang istri telah sekitar empat tahun terbaring akibat stroke dan membutuhkan perawatan setiap hari.
+
+Di tengah kondisi ekonomi yang terbatas, Pak Mahmud harus tetap berjuang memenuhi kebutuhan keluarga sekaligus menghadapi kenyataan bahwa istrinya membutuhkan perhatian dan perawatan setiap waktu. Di usia yang tak lagi muda, perjalanan hidupnya tentu bukanlah hal yang mudah.
+
+Kisah Pak Mahmud menjadi gambaran nyata perjuangan seorang suami yang tetap berusaha bertahan di tengah keterbatasan. Ketika sebagian orang menikmati masa tua dengan beristirahat, ia masih harus mengayuh perjuangan demi keluarganya.
+
+Melihat kondisi tersebut, LAZ Rumah Yatim Dhuafa Rydha mengajak masyarakat untuk bersama-sama membantu Pak Mahmud dan keluarganya. Uluran tangan dari para dermawan diharapkan dapat meringankan beban kehidupan mereka, terutama dalam memenuhi kebutuhan sehari-hari dan mendukung perawatan sang istri.
+
+Kini, kesempatan untuk membantu terbuka bagi siapa saja yang ingin berbagi kepedulian. Tak harus menunggu kaya untuk menolong sesama, sebab bantuan sekecil apa pun dapat menjadi harapan besar bagi mereka yang sedang menghadapi kesulitan.
+
+Bagi masyarakat yang ingin turut membantu, donasi dapat disalurkan melalui kampanye resmi LAZ Rumah Yatim Dhuafa Rydha berikut:
+
+https://berbagi.lazrydha.org/campaign/bantu-pak-mahmud?ref=atdbg
+
+Mari bersama-sama meringankan beban Pak Mahmud. Di balik perjuangannya yang panjang, ada keluarga yang membutuhkan dukungan dan kepedulian kita.
+
+Sebab, bagi mereka yang sedang berjuang, uluran tangan kita bukan sekadar bantuan, melainkan harapan untuk menjalani hari esok dengan lebih baik.`
+},
+  {
+    judul: "Demo BPPKB Banten di Kecamatan Mauk, Tuntut Keadilan dan Klarifikasi Dugaan Pelecehan Organisasi",
+    tanggal: "28 September 2026",
+    kategori: "BANTEN",
+    foto: "https://raw.githubusercontent.com/saepulharis12/liputan-inews.id/421474ae2543d1851e181f415531795dbf82aa00/Demo%20BPPKB%20Banten%20di%20Kecamatan%20Mauk%2C%20Tuntut%20Keadilan%20dan%20Klarifikasi%20Dugaan%20Pelecehan%20Organisasi.jpg",
+    isi: `Demo BPPKB Banten di Kecamatan Mauk, Tuntut Keadilan dan Klarifikasi Dugaan Pelecehan Organisasi
+
+TANGERANG — Massa BPPKB Banten menggelar aksi demonstrasi di depan Kantor Kecamatan Mauk, Kabupaten Tangerang, pada Senin (19/10/2026)  Aksi tersebut bertujuan menuntut keadilan dan meminta klarifikasi terkait dugaan tindakan seorang oknum kepala desa yang dinilai melecehkan organisasi mereka.
+
+Berdasarkan informasi yang disampaikan, massa datang untuk berupaya melakukan dialog langsung dengan pihak kepolisian dan Camat Mauk. Mereka meminta agar persoalan tersebut mendapat penjelasan dan penyelesaian yang adil.
+
+Dalam menyampaikan tuntutannya, massa BPPKB Banten tetap mengedepankan upaya mediasi secara tertib dan kondusif. Langkah tersebut diharapkan dapat membuka ruang komunikasi antara pihak-pihak terkait untuk mencari penyelesaian atas persoalan yang dipermasalahkan.
+
+Aksi ini menjadi bentuk penyampaian aspirasi massa BPPKB Banten yang mengharapkan adanya kejelasan serta keadilan terkait dugaan pelecehan terhadap organisasi mereka.
+
+Redaksi/Wartawan: Saepul Haris
+
+(Redaksi/Reporter).`
+}
+
+
+
+  
+];
+window.BERITA_DATA_OK = Array.isArray(window.BERITA_DATA);
+</script>
+<!-- ============ AKHIR DATA BERITA ============ -->
+
+<script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.24.7/babel.min.js"></script>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useMemo, useRef } = React;
+
+/* ===== NAMA WEBSITE ===== */
+const SITE_NAME = 'LIPUTAN INEWS HRS.GRUP';
+const SITE_AUTHOR = 'Redaksi ' + SITE_NAME;
+const SITE_READER = 'Pembaca ' + SITE_NAME;
+
+/* ===== PASSWORD MODE REDAKSI (GANTI DI SINI) =====
+   Masuk: Ctrl+Shift+A ATAU ketik "admin" ATAU klik logo 3x cepat */
+const ADMIN_PASSWORD = 'admin123';
+
+/* =========================================================
+   ★★ PARSER TOLERAN — PERBAIKI OTOMATIS KESALAHAN KETIK ★★
+   Kalau blok data berita ada koma hilang / backtick tak
+   tertutup / kurung kurang, berita TETAP DISELAMATKAN.
+   ========================================================= */
+function bacaField(chunk, field){
+  try{
+    const re = new RegExp('(?:^|[\\n\\r;,{}\\s])'+field+'\\s*[:=]\\s*','i');
+    const m = chunk.match(re);
+    if(!m) return '';
+    let rest = chunk.slice(m.index + m[0].length).replace(/^[ \t]+/,'');
+    const q = rest.charAt(0);
+    if(q === '`' || q === '"' || q === "'"){
+      const close = rest.indexOf(q, 1);
+      if(close !== -1) return rest.slice(1, close).trim();
+      /* nilai tidak ditutup → selamatkan sampai sebelum penutup objek */
+      let v = rest.slice(1);
+      v = v.replace(/[{}\[\];,\s]+$/g, '');
+      return v.trim();
+    }
+    const nl = rest.search(/[\n\r}]/);
+    return (nl === -1 ? rest : rest.slice(0, nl)).trim();
+  }catch(e){ return ''; }
+}
+function parseBeritaToleran(raw){
+  try{
+    if(!raw) return [];
+    const items = [];
+    const re = /judul\s*[:=]/gi;
+    const pos = [];
+    let m;
+    while((m = re.exec(raw)) !== null){ pos.push(m.index); }
+    for(let p=0;p<pos.length;p++){
+      const chunk = raw.slice(pos[p], p+1<pos.length ? pos[p+1] : raw.length);
+      const it = {
+        judul: bacaField(chunk,'judul'),
+        tanggal: bacaField(chunk,'tanggal'),
+        kategori: bacaField(chunk,'kategori'),
+        foto: bacaField(chunk,'foto'),
+        isi: bacaField(chunk,'isi')
+      };
+      if(it.judul) items.push(it);
+    }
+    return items;
+  }catch(e){ return []; }
+}
+
+/* ===== MUAT DATA BERITA (2 LAPIS: normal → perbaikan otomatis) ===== */
+let berita = [];
+let BERITA_MODE = 'ok';
+try{
+  if(window.BERITA_DATA_OK && Array.isArray(window.BERITA_DATA)){
+    berita = window.BERITA_DATA.filter(x => x && (x.judul || x.title));
+  }
+}catch(e){}
+if(!berita.length){
+  try{
+    const el = document.getElementById('berita-data-src');
+    const recovered = parseBeritaToleran(el ? el.textContent : '');
+    if(recovered.length){ berita = recovered; BERITA_MODE = 'toleran'; }
+  }catch(e){}
+}
+if(!berita.length) BERITA_MODE = 'kosong';
+window.__BERITA_MODE__ = BERITA_MODE;
+
+/* ===== FOTO TOPIKAL DARI INTERNET (fallback jika foto lokal/URL kosong/gagal) ===== */
+const TOPIC_PHOTOS = {
+  Umum: ['https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1495020689067-958852a7765e?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1585829365295-ab7cd400c167?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200&auto=format&fit=crop'],
+  Kota: ['https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1444723121867-7a241cacace9?q=80&w=1200&auto=format&fit=crop'],
+  Olahraga: ['https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1459865264687-595d652de67e?q=80&w=1200&auto=format&fit=crop'],
+  Politik: ['https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=1200&auto=format&fit=crop'],
+  Ekonomi: ['https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop'],
+  Kesehatan: ['https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1200&auto=format&fit=crop'],
+  Pendidikan: ['https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=1200&auto=format&fit=crop'],
+  Teknologi: ['https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200&auto=format&fit=crop'],
+  Lingkungan: ['https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=80&w=1200&auto=format&fit=crop'],
+  Hukum: ['https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1453945619913-79ec89a82c51?q=80&w=1200&auto=format&fit=crop'],
+  GayaHidup: ['https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=1200&auto=format&fit=crop'],
+  Desa: ['https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop','https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=1200&auto=format&fit=crop']
+};
+const TOPIC_KEYWORDS = [
+  ['Olahraga', ['olahraga','sepak bola','sepakbola','liga','timnas','atlet','badminton','basket','piala','gol','pertandingan','turnamen','voli','renang','maraton']],
+  ['Politik', ['politik','pemilu','pilkada','dpr','presiden','menteri','partai','pemerintah','istana','gubernur','bupati','wali kota','wantimpres','rapat paripurna']],
+  ['Ekonomi', ['ekonomi','harga','rupiah','saham','investasi','bisnis','umkm','pasar','bansos','subsidi','perdagangan','ihsg','bursa','pajak','anggaran','apbn']],
+  ['Kesehatan', ['kesehatan','rumah sakit','puskesmas','dokter','pasien','vaksin','penyakit','obat','stunting','medis','rsud']],
+  ['Pendidikan', ['sekolah','siswa','guru','universitas','kampus','ujian','pelajar','mahasiswa','pendidikan','beasiswa']],
+  ['Teknologi', ['teknologi','digital','artificial intelligence','internet','aplikasi','startup','komputer','gadget','siber']],
+  ['Lingkungan', ['banjir','cuaca','hutan','sampah','lingkungan','gempa','erupsi','gunung','bencana','iklim','kebakaran','longsor','tsunami']],
+  ['Hukum', ['polisi','kasus','tersangka','penjara','pengadilan','kejaksaan','hukum','narkoba','kecelakaan','penipuan','pidana','terbakar','api','pemadam']],
+  ['Gaya Hidup', ['wisata','kuliner','festival','konser','film','hiburan','liburan','travel','fashion','musik','artis']],
+  ['Desa', ['desa','pertanian','petani','panen','tani','dusun','hut desa','kampung']]
+];
+function matchTopic(title, deck, category){
+  const text = ((category||'')+' '+(title||'')+' '+(deck||'')).toLowerCase();
+  for(const [topic, words] of TOPIC_KEYWORDS){ if(words.some(w=>text.includes(w))) return topic; }
+  const catMap = {'Olahraga':'Olahraga','Politik':'Politik','Ekonomi':'Ekonomi','Kesehatan':'Kesehatan','Pendidikan':'Pendidikan','Teknologi':'Teknologi','Lingkungan':'Lingkungan','Hukum':'Hukum','Gaya Hidup':'GayaHidup','Berita Desa':'Desa','Peristiwa':'Kota','Daerah':'Desa','Nasional':'Umum'};
+  return catMap[category] || 'Umum';
+}
+function pickTopicPhoto(title, deck, category, seed){
+  const topic = matchTopic(title, deck, category);
+  const pool = TOPIC_PHOTOS[topic] || TOPIC_PHOTOS.Umum;
+  const s = String(seed||title||'x');
+  let h=0; for(let i=0;i<s.length;i++){ h=(h*31+s.charCodeAt(i))>>>0; }
+  return pool[h % pool.length];
+}
+function netPhoto(seed){ return 'https://picsum.photos/seed/'+encodeURIComponent(seed)+'/900/500'; }
+
+/* Foto lokal dari folder yang sama */
+function fotoPath(f){
+  const s = String(f||'').trim();
+  if(!s) return '';
+  if(/^https?:\/\//i.test(s)) return s;
+  if(s.indexOf('/') === 0 || s.indexOf('./') === 0) return s;
+  return s.replace(/ /g, '%20');
+}
+
+/* Logo: utama = logo-liputan-news.png (animasi) */
+const LOGO_DARURAT = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160">'+
+  '<rect width="640" height="160" rx="24" fill="#1c1917"/>'+
+  '<rect x="22" y="22" width="116" height="116" rx="18" fill="#b91c1c"/>'+
+  '<text x="80" y="80" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#ffffff" text-anchor="middle">LI</text>'+
+  '<text x="80" y="112" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#fca5a5" text-anchor="middle">NEWS</text>'+
+  '<text x="158" y="78" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#ffffff">LIPUTAN INEWS</text>'+
+  '<text x="160" y="120" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#ef4444">HRS.GRUP</text>'+
+  '</svg>'
+);
+const LOCAL_ASSETS = {
+  logoUtama: fotoPath('logo-liputan-news.png'),
+  logo: fotoPath('logo.png'),
+  logoFooter: fotoPath('logo-footer.png')
+};
+
+const REAL_NEWS_FEEDS = [
+  { url:'https://www.antaranews.com/rss/news.xml',      name:'ANTARA News' },
+  { url:'https://rss.detik.com/index.php/detikcom',     name:'Detik.com' },
+  { url:'https://www.cnnindonesia.com/rss',             name:'CNN Indonesia' },
+  { url:'https://www.liputan6.com/rss/feed/terkini',    name:'Liputan6' },
+  { url:'https://www.kompas.com/navsource/rss/0',       name:'Kompas.com' },
+  { url:'https://feeds.bbci.co.uk/indonesian/rss.xml',  name:'BBC Indonesia' },
+  { url:'https://rss.tempo.co/nasional',                name:'Tempo' },
+  { url:'https://www.tribunnews.com/rss',               name:'Tribunnews' },
+  { url:'https://news.okezone.com/allrss',              name:'Okezone' },
+  { url:'https://www.jpnn.com/rss',                     name:'JPNN' },
+  { url:'https://news.google.com/rss?hl=id&gl=ID&ceid=ID:id', name:'Google News' },
+  { url:'https://www.tangerangnews.com/rss', name:'TangerangNews' }
+];
+const REAL_NEWS_REFRESH_MS = 5 * 60 * 1000;
+
+const INDONESIA_ISLANDS = {
+  'Sumatra':['Aceh','Sumatera Utara','Sumatera Barat','Riau','Jambi','Sumatera Selatan','Bengkulu','Lampung','Kepulauan Bangka Belitung','Kepulauan Riau'],
+  'Jawa':['DKI Jakarta','Jawa Barat','Jawa Tengah','DI Yogyakarta','Jawa Timur','Banten'],
+  'Bali & Nusa Tenggara':['Bali','Nusa Tenggara Barat','Nusa Tenggara Timur'],
+  'Kalimantan':['Kalimantan Barat','Kalimantan Tengah','Kalimantan Selatan','Kalimantan Timur','Kalimantan Utara'],
+  'Sulawesi':['Sulawesi Utara','Sulawesi Tengah','Sulawesi Selatan','Sulawesi Tenggara','Gorontalo','Sulawesi Barat'],
+  'Maluku':['Maluku','Maluku Utara'],
+  'Papua':['Papua','Papua Barat','Papua Selatan','Papua Tengah','Papua Pegunungan','Papua Barat Daya']
+};
+const ALL_PROVINCES = Object.values(INDONESIA_ISLANDS).flat();
+const PROV_TO_ISLAND = {};
+Object.entries(INDONESIA_ISLANDS).forEach(([isl,provs])=>provs.forEach(p=>PROV_TO_ISLAND[p]=isl));
+const POPULAR_REGIONS = ['Nasional','Jakarta','Banten','Jawa Barat','Jawa Tengah','Jawa Timur','Sumatera Utara','Sulawesi Selatan','Bali','Papua'];
+const CATEGORIES = ['Semua','Nasional','Politik','Ekonomi','Teknologi','Daerah','Hukum','Pendidikan','Kesehatan','Olahraga','Gaya Hidup','Lingkungan'];
+
+const BULAN_INDO = {januari:0,februari:1,maret:2,april:3,mei:4,juni:5,juli:6,agustus:7,september:8,oktober:9,november:10,desember:11};
+function parseTanggalIndo(str){
+  if(!str) return new Date().toISOString();
+  const m = String(str).trim().match(/^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})$/);
+  if(m && BULAN_INDO[m[2].toLowerCase()]!==undefined){
+    const d = new Date(Number(m[3]), BULAN_INDO[m[2].toLowerCase()], Number(m[1]), 8, 0);
+    if(!isNaN(d)) return d.toISOString();
+  }
+  const d = new Date(str);
+  return isNaN(d) ? new Date().toISOString() : d.toISOString();
+}
+
+/* Konversi item berita — dijaga agar item rusak pun tidak menjatuhkan aplikasi */
+function convertBerita(item,i){
+  if(!item) return null;
+  const judul = String(item.judul||item.title||'').trim();
+  if(!judul) return null;
+  const content = String(item.isi||'').trim() || judul;
+  const kalimat = content.replace(/\n+/g,' ').split('.').map(s=>s.trim()).filter(Boolean);
+  const det = detectRegionAndCategory(judul, content);
+  return {
+    id:'seed-'+(i+1),
+    title:judul,
+    slug:judul.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''),
+    deck:kalimat[0]?kalimat[0]+'.':judul,
+    content:content,
+    keyTakeaways:kalimat.slice(0,3),
+    category:String(item.kategori||'Daerah').trim()||'Daerah',
+    tags:(item.kategori?[String(item.kategori).trim()]:[]).filter(Boolean),
+    prov:det.prov, kota:det.kota||'', pulau:det.island,
+    author:SITE_AUTHOR,
+    publishedAt:parseTanggalIndo(item.tanggal),
+    readingTime:Math.max(1,Math.ceil(content.split(/\s+/).length/180)),
+    image:fotoPath(item.foto),
+    views:0,likes:0,isLead:false,isBreaking:false,comments:[]
+  };
+}
+const SEED_ARTICLES = berita.map(convertBerita).filter(Boolean);
+const SEED_IDS = new Set(SEED_ARTICLES.map(s=>s.id));
+const ALL_CATEGORIES = [...new Set([...CATEGORIES, ...berita.map(b=>b && String(b.kategori||'').trim()).filter(Boolean)])];
+const SEED_FINGERPRINT = berita.map(b=>[
+  String((b&&b.judul)||''),String((b&&b.tanggal)||''),String((b&&b.kategori)||''),
+  String((b&&b.foto)||''),String((b&&b.isi)||'')
+].join('§')).join('¶');
+
+function detectRegionAndCategory(title,content){
+  const text = (title+' '+(content||'')).toLowerCase();
+  const rules = [
+    ['Politik',['politik','pemilu','pilkada','dpr','presiden','partai','kpu','bawaslu']],
+    ['Ekonomi',['ekonomi','bisnis','investasi','rupiah','pasar','perbankan','umkm']],
+    ['Teknologi',['teknologi','digital','internet','aplikasi','ai','startup']],
+    ['Hukum',['hukum','pengadilan','polisi','kejaksaan','kasus','tersangka','pidana']],
+    ['Pendidikan',['pendidikan','sekolah','kampus','guru','siswa','universitas']],
+    ['Kesehatan',['kesehatan','rumah sakit','dokter','obat','penyakit']],
+    ['Olahraga',['olahraga','sepak bola','bola','badminton','basket','atlet']],
+    ['Gaya Hidup',['gaya hidup','kuliner','wisata','fashion','hiburan']],
+    ['Lingkungan',['lingkungan','banjir','sampah','hutan','cuaca','iklim']]
+  ];
+  let category='Nasional';
+  for(const [cat,words] of rules){ if(words.some(w=>text.includes(w))){category=cat;break;} }
+  for(const [isl,provinces] of Object.entries(INDONESIA_ISLANDS)){
+    for(const p of provinces){ if(text.includes(p.toLowerCase())) return {prov:p,island:isl,category}; }
+  }
+  const aliases=[
+    ['Tangerang','Banten','Jawa'],['Serang','Banten','Jawa'],['Pandeglang','Banten','Jawa'],
+    ['Lebak','Banten','Jawa'],['Bandung','Jawa Barat','Jawa'],['Bekasi','Jawa Barat','Jawa'],
+    ['Bogor','Jawa Barat','Jawa'],['Depok','Jawa Barat','Jawa'],['Semarang','Jawa Tengah','Jawa'],
+    ['Surabaya','Jawa Timur','Jawa'],['Yogyakarta','DI Yogyakarta','Jawa'],['Jakarta','DKI Jakarta','Jawa'],
+    ['Medan','Sumatera Utara','Sumatra'],['Makassar','Sulawesi Selatan','Sulawesi'],['Denpasar','Bali','Bali & Nusa Tenggara'],
+    ['Gunung Sari','Banten','Jawa'],['Mauk','Banten','Jawa']
+  ];
+  for(const [city,p,isl] of aliases){ if(text.includes(city.toLowerCase())) return {prov:p,island:isl,kota:city,category}; }
+  return {prov:'Nasional',island:'Nasional',category};
+}
+
+function hoursAgo(h){ return new Date(Date.now()-h*3600000).toISOString(); }
+function hashStr(s){ let h=0; const t=String(s); for(let i=0;i<t.length;i++){ h=(h*31+t.charCodeAt(i))>>>0; } return h; }
+function hashId(str){ return 'real-'+hashStr(str); }
+function stripHtml(html){ const d=document.createElement('div'); d.innerHTML=html||''; return (d.textContent||'').replace(/\s+/g,' ').trim(); }
+function extractImage(item){
+  if(item.thumbnail) return item.thumbnail;
+  if(item.enclosure && item.enclosure.link && /\.(jpg|jpeg|png|webp|gif)/i.test(item.enclosure.link)) return item.enclosure.link;
+  const html = (item.content||'') + ' ' + (item.description||'');
+  const m = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+  if(m && m[1].indexOf('news.google.com')===-1) return m[1];
+  const m2 = html.match(/https?:\/\/[^\s"'<>]+\.(?:jpg|jpeg|png|webp)/i);
+  if(m2 && m2[0].indexOf('news.google.com')===-1) return m2[0];
+  return '';
+}
+function formatViews(n){ return (n||0).toLocaleString('id-ID'); }
+
+function baseStats(id){
+  const h = hashStr(id);
+  const views = 900 + (h % 15000);
+  const likes = Math.max(12, Math.floor(views * (0.018 + ((h>>3) % 40)/1000)));
+  const comments = 2 + ((h>>6) % 35);
+  const shares = Math.max(4, Math.floor(likes * 0.25));
+  return {views, likes, comments, shares};
+}
+
+const INITIAL_ARTICLES = [
+  { id:'art-1', title:'Pemerintah Perkuat Kolaborasi Pembangunan untuk Masyarakat',
+    slug:'pemerintah-perkuat-kolaborasi-pembangunan',
+    deck:'Sinergi pemerintah pusat dan daerah terus didorong untuk mempercepat pembangunan yang berdampak langsung kepada masyarakat.',
+    content:'Pemerintah terus mendorong kolaborasi lintas sektor dalam pelaksanaan pembangunan.\n\nKoordinasi antara pemerintah pusat, pemerintah daerah, lembaga masyarakat dan pemangku kepentingan menjadi bagian penting dalam memastikan program berjalan sesuai kebutuhan masyarakat. Setiap program dirancang dengan melibatkan partisipasi warga sejak tahap perencanaan.\n\nKe depan, pemerintah berkomitmen memperluas forum musyawarah pembangunan ke tingkat kelurahan dan desa agar aspirasi masyarakat tersalurkan lebih baik.',
+    keyTakeaways:['Kolaborasi lintas sektor menjadi perhatian.','Program diarahkan pada kebutuhan masyarakat.','Koordinasi pusat dan daerah diperkuat.'],
+    category:'Nasional', tags:['Pemerintah','Pembangunan'],
+    prov:'Nasional', kota:'Jakarta', pulau:'Jawa',
+    author:SITE_AUTHOR, publishedAt:hoursAgo(50), readingTime:4,
+    image:'', isLead:true, isBreaking:false },
+  { id:'art-2', title:'Pemuda Daerah Dorong Inovasi Digital untuk Ekonomi Lokal',
+    slug:'pemuda-daerah-dorong-inovasi-digital',
+    deck:'Pengembangan keterampilan digital dinilai membuka peluang baru bagi generasi muda di daerah.',
+    content:'Pemuda di berbagai daerah mulai mengembangkan inovasi berbasis teknologi.\n\nMulai dari pengelolaan informasi, pemasaran digital, hingga layanan berbasis internet menjadi bagian dari aktivitas ekonomi lokal. Komunitas-komunitas digital di tingkat desa dan kota kecil mulai bermunculan dan saling terhubung.\n\nPelaku usaha kecil merasakan manfaat langsung dari pemasaran digital, terutama dalam menjangkau pembeli di luar daerah.',
+    keyTakeaways:['Literasi digital berkembang.','Pemuda masuk ekonomi digital.','Teknologi mendukung usaha lokal.'],
+    category:'Teknologi', tags:['Digital','Pemuda','UMKM'],
+    prov:'Banten', kota:'Tangerang', pulau:'Jawa',
+    author:'Tim Redaksi', publishedAt:hoursAgo(70), readingTime:3,
+    image:'', isLead:false, isBreaking:false },
+  { id:'art-3', title:'Aktivitas Ekonomi Lokal Terus Bergerak di Tengah Perubahan Pasar',
+    slug:'aktivitas-ekonomi-lokal-terus-bergerak',
+    deck:'Pelaku usaha lokal beradaptasi dengan perubahan perilaku konsumen dan perkembangan teknologi.',
+    content:'Pelaku usaha kecil dan menengah terus melakukan penyesuaian terhadap perubahan pasar.\n\nPemanfaatan media digital menjadi salah satu strategi untuk menjangkau konsumen yang lebih luas. Pelatihan dan pendampingan dari berbagai pihak turut membantu pelaku usaha beradaptasi.',
+    keyTakeaways:['Pelaku usaha beradaptasi.','Pemasaran digital digunakan luas.'],
+    category:'Ekonomi', tags:['Ekonomi','UMKM','Bisnis'],
+    prov:'Jawa Barat', kota:'Bandung', pulau:'Jawa',
+    author:'Redaksi Ekonomi', publishedAt:hoursAgo(95), readingTime:4,
+    image:'', isLead:false, isBreaking:false },
+  { id:'art-4', title:'Layanan Kesehatan Daerah Terus Diperkuat',
+    slug:'layanan-kesehatan-daerah-diperkuat',
+    deck:'Peningkatan kualitas pelayanan menjadi bagian dari upaya memperluas akses kesehatan masyarakat.',
+    content:'Pemerintah daerah terus melakukan berbagai upaya untuk meningkatkan pelayanan kesehatan.\n\nPenguatan fasilitas dan sumber daya manusia menjadi perhatian dalam peningkatan layanan. Masyarakat diharapkan lebih mudah mengakses pelayanan dasar di fasilitas kesehatan terdekat.',
+    keyTakeaways:['Akses pelayanan jadi perhatian.','Fasilitas terus dikembangkan.'],
+    category:'Kesehatan', tags:['Kesehatan','Pelayanan','Daerah'],
+    prov:'Jawa Timur', kota:'Surabaya', pulau:'Jawa',
+    author:'Tim Redaksi', publishedAt:hoursAgo(120), readingTime:3,
+    image:'', isLead:false, isBreaking:false },
+  { id:'art-5', title:'Komunitas Lokal Gelar Kegiatan untuk Lingkungan',
+    slug:'komunitas-lokal-gelar-kegiatan-lingkungan',
+    deck:'Kegiatan berbasis masyarakat dilakukan untuk meningkatkan kepedulian terhadap kebersihan lingkungan.',
+    content:'Komunitas lokal mengadakan kegiatan yang melibatkan masyarakat.\n\nSelain menjaga kebersihan, kegiatan tersebut menjadi ruang untuk membangun kebersamaan warga. Kegiatan serupa diharapkan rutin dilaksanakan di berbagai lingkungan.',
+    keyTakeaways:['Kegiatan melibatkan warga.','Kebersihan jadi perhatian bersama.'],
+    category:'Lingkungan', tags:['Lingkungan','Komunitas'],
+    prov:'Bali', kota:'Denpasar', pulau:'Bali & Nusa Tenggara',
+    author:'Desk Lingkungan', publishedAt:hoursAgo(150), readingTime:3,
+    image:'', isLead:false, isBreaking:false },
+  { id:'art-6', title:'Olahraga Menjadi Ruang Aktivitas Positif Generasi Muda',
+    slug:'olahraga-aktivitas-positif-generasi-muda',
+    deck:'Kegiatan olahraga di tingkat komunitas terus berkembang dan melibatkan generasi muda.',
+    content:'Berbagai kegiatan olahraga menjadi bagian dari aktivitas masyarakat.\n\nSelain menjaga kebugaran, kegiatan tersebut juga menjadi ruang interaksi dan pembinaan generasi muda. Komunitas olahraga terus bertumbuh di berbagai daerah.',
+    keyTakeaways:['Olahraga jadi ruang aktivitas.','Generasi muda aktif berkomunitas.'],
+    category:'Olahraga', tags:['Olahraga','Pemuda','Komunitas'],
+    prov:'Sulawesi Selatan', kota:'Makassar', pulau:'Sulawesi',
+    author:'Desk Olahraga', publishedAt:hoursAgo(180), readingTime:3,
+    image:'', isLead:false, isBreaking:false }
+].map(a => Object.assign(a, { views:0, likes:0, comments:[] }));
+
+const DEFAULT_ARTICLES = [...SEED_ARTICLES, ...INITIAL_ARTICLES];
+
+/* ===== STORAGE v19 ===== */
+const STORAGE = { articles:'inw_v19_articles', real:'inw_v19_real', bookmarks:'inw_v19_bookmarks', notifications:'inw_v19_notif', likes:'inw_v19_likes', engagement:'inw_v19_engagement', seedSync:'inw_v19_seedsync' };
+function loadStorage(key,fallback){
+  try{ const c=localStorage.getItem(key); if(c) return JSON.parse(c); }catch(e){}
+  return fallback;
+}
+function saveStorage(key,value){ try{ localStorage.setItem(key,JSON.stringify(value)); }catch(e){} }
+function safeGetSession(k){ try{ return sessionStorage.getItem(k); }catch(e){ return null; } }
+function safeSetSession(k,v){ try{ if(v) sessionStorage.setItem(k,v); else sessionStorage.removeItem(k); }catch(e){} }
+
+function syncSeedsWithStorage(){
+  const stored = loadStorage(STORAGE.articles, null);
+  if(!stored || !Array.isArray(stored) || !stored.length){
+    saveStorage(STORAGE.seedSync, SEED_FINGERPRINT);
+    return { list: DEFAULT_ARTICLES, added: 0 };
+  }
+  const prevFp = loadStorage(STORAGE.seedSync, null);
+  const fpChanged = prevFp !== SEED_FINGERPRINT;
+  let list = stored.slice();
+  let added = 0;
+  SEED_ARTICLES.forEach(seed => {
+    const idx = list.findIndex(a => a.id === seed.id);
+    if(idx === -1){ list.push(seed); added++; }
+    else if(fpChanged){
+      list[idx] = Object.assign({}, list[idx], {
+        title:seed.title, slug:seed.slug, deck:seed.deck, content:seed.content,
+        keyTakeaways:seed.keyTakeaways, category:seed.category, tags:seed.tags,
+        prov:seed.prov, kota:seed.kota, pulau:seed.pulau,
+        publishedAt:seed.publishedAt, readingTime:seed.readingTime, image:seed.image
+      });
+    }
+  });
+  list = list.filter(a => !(a.id && String(a.id).indexOf('seed-')===0 && !SEED_IDS.has(a.id)));
+  saveStorage(STORAGE.seedSync, SEED_FINGERPRINT);
+  return { list, added };
+}
+
+function SafeImg(props){
+  const chain = [...new Set([props.src, props.fallback, props.net].filter(Boolean))];
+  if(!chain.length) return null;
+  return (
+    <img src={chain[0]} alt={props.alt||''} loading="lazy"
+      referrerPolicy="no-referrer"
+      className={props.className}
+      onError={e=>{
+        const t=e.currentTarget;
+        const i = Number(t.dataset.i||0) + 1;
+        if(i < chain.length && chain[i] !== t.getAttribute('src')){
+          t.dataset.i = String(i);
+          t.src = chain[i];
+        } else { t.style.display='none'; }
+      }} />
+  );
+}
+function AnimatedLogo({ src, fallback, className }) {
+  return (
+    <span className={"logo-anim "+(className||'')}>
+      <SafeImg src={src} fallback={fallback} net={LOGO_DARURAT}
+        alt={SITE_NAME} className="h-full w-auto max-w-none object-contain object-left" />
+    </span>
+  );
+}
+function ArticleImg({ article, className }) {
+  const topic = article._topicImg
+    || pickTopicPhoto(article.title, article.deck, article.category, article.id);
+  return (
+    <SafeImg src={article.image} fallback={topic} net={netPhoto(article.id||article.title)}
+      alt={article.title} className={className} />
+  );
+}
+
+const EMPTY_ADMIN_FORM = { id:'', title:'', deck:'', content:'', category:'Nasional', prov:'Nasional', kota:'', image:'', tags:'', isLead:false, isBreaking:false };
+
+class Boundary extends React.Component {
+  constructor(p){ super(p); this.state={err:null}; }
+  static getDerivedStateFromError(e){ return {err:e}; }
+  render(){
+    if(this.state.err){
+      return (
+        <div style={{padding:40,fontFamily:'Arial'}}>
+          <h2 style={{fontWeight:800,fontSize:22}}>Terjadi kesalahan pada aplikasi.</h2>
+          <pre style={{whiteSpace:'pre-wrap',color:'#b91c1c',fontSize:13}}>{String(this.state.err && this.state.err.message || this.state.err)}</pre>
+          <button onClick={()=>{try{Object.values(STORAGE).forEach(k=>localStorage.removeItem(k));}catch(e){} location.reload();}}
+            style={{background:'#1c1917',color:'#fff',padding:'10px 18px',borderRadius:10,border:'none',fontWeight:700,cursor:'pointer'}}>
+            Reset Data &amp; Muat Ulang
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+function ArticleBody({ content, fontSize }) {
+  const paras = String(content||'').split(/\n{2,}/).map(p=>p.trim()).filter(Boolean);
+  if(!paras.length) return null;
+  return (
+    <div className="space-y-5 font-serif leading-relaxed text-stone-800">
+      {paras.map((p,i)=>(
+        <p key={i} className={i===0?'dropcap':''} style={{fontSize:fontSize+'px', whiteSpace:'pre-line'}}>{p}</p>
+      ))}
+    </div>
+  );
+}
+
+function App(){
+  const seedAddedRef = useRef(0);
+  const [localArticles,setLocalArticles] = useState(()=>{
+    const r = syncSeedsWithStorage();
+    seedAddedRef.current = r.added;
+    return r.list;
+  });
+  const [realArticles,setRealArticles] = useState(()=>loadStorage(STORAGE.real,[]));
+  const [bookmarks,setBookmarks] = useState(()=>loadStorage(STORAGE.bookmarks,[]));
+  const [notifications,setNotifications] = useState(()=>loadStorage(STORAGE.notifications,[]));
+  const [likedIds,setLikedIds] = useState(()=>loadStorage(STORAGE.likes,[]));
+  const [engagement,setEngagement] = useState(()=>loadStorage(STORAGE.engagement,{}));
+
+  const [activeCategory,setActiveCategory] = useState('Semua');
+  const [activeRegion,setActiveRegion] = useState('Semua Daerah');
+  const [selectedIsland,setSelectedIsland] = useState('Semua');
+  const [searchQuery,setSearchQuery] = useState('');
+  const [selectedTag,setSelectedTag] = useState(null);
+
+  const [selectedArticle,setSelectedArticle] = useState(null);
+  const [showNotifications,setShowNotifications] = useState(false);
+  const [showBookmarks,setShowBookmarks] = useState(false);
+  const [showRegionMenu,setShowRegionMenu] = useState(false);
+
+  const [unlocked,setUnlocked] = useState(()=>safeGetSession('inw_admin')==='1');
+  const [showAdmin,setShowAdmin] = useState(false);
+  const [showSecretPrompt,setShowSecretPrompt] = useState(false);
+  const [secretInput,setSecretInput] = useState('');
+  const [adminForm,setAdminForm] = useState(EMPTY_ADMIN_FORM);
+  const keyBufferRef = useRef('');
+  const logoClicksRef = useRef({count:0,timer:null});
+
+  const [fontSize,setFontSize] = useState(18);
+  const [isReading,setIsReading] = useState(false);
+  const [commentText,setCommentText] = useState('');
+  const [toast,setToast] = useState(null);
+  const [loadingNews,setLoadingNews] = useState(true);
+  const realIdsRef = useRef(new Set());
+
+  const [visitorSeed, setVisitorSeed] = useState(()=>{
+    let s = safeGetSession('inw_seed');
+    if(!s){ s = Math.random().toString(36).slice(2,10); safeSetSession('inw_seed', s); }
+    return s;
+  });
+
+  useEffect(()=>saveStorage(STORAGE.articles,localArticles),[localArticles]);
+  useEffect(()=>saveStorage(STORAGE.real,realArticles),[realArticles]);
+  useEffect(()=>saveStorage(STORAGE.bookmarks,bookmarks),[bookmarks]);
+  useEffect(()=>saveStorage(STORAGE.notifications,notifications),[notifications]);
+  useEffect(()=>saveStorage(STORAGE.likes,likedIds),[likedIds]);
+  useEffect(()=>saveStorage(STORAGE.engagement,engagement),[engagement]);
+
+  useEffect(()=>{
+    const notes = [];
+    if(seedAddedRef.current > 0){
+      notes.push({id:'ntf-seed-'+Date.now(), title:seedAddedRef.current+' berita baru dari kode berhasil dimuat', text:'Berita dari blok BERITA_DATA kini tampil di halaman utama.', read:false});
+    }
+    if(window.__BERITA_MODE__ === 'toleran'){
+      notes.push({id:'ntf-fix-'+Date.now(), title:'✅ Berita dimuat setelah perbaikan otomatis', text:'Ada kesalahan ketik kecil di blok data (koma atau backtick), tapi semua berita berhasil diselamatkan dan tampil normal. Website aman.', read:false});
+    } else if(window.__BERITA_MODE__ === 'kosong'){
+      notes.push({id:'ntf-berita-err-'+Date.now(), title:'⚠ Data berita di kode tidak terbaca', text:'Blok BERITA_DATA kosong atau judul berita tidak ditemukan. Website tetap berjalan. Tambahkan berita dengan kolom judul, tanggal, kategori, foto, dan isi.', read:false});
+    }
+    if(notes.length) setNotifications(prev=>[...notes, ...prev].slice(0,40));
+  },[]);
+
+  async function fetchFeed(feed){
+    try{
+      const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(feed.url));
+      const data = await res.json();
+      if(!data || data.status!=='ok' || !data.items || !data.items.length) return [];
+      return data.items.map((item,i)=>{
+        const rawTitle = stripHtml(item.title||'');
+        let title=rawTitle, source='';
+        const dashIdx = rawTitle.lastIndexOf(' - ');
+        if(dashIdx>15){ source=rawTitle.slice(dashIdx+3); title=rawTitle.slice(0,dashIdx); }
+        if(!source) source=feed.name;
+        const fullRaw = stripHtml(item.content||'');
+        const descRaw = stripHtml(item.description||'');
+        const desc = fullRaw.length > descRaw.length ? fullRaw : descRaw;
+        const det = detectRegionAndCategory(title,desc);
+        const d = item.pubDate ? new Date(item.pubDate) : new Date();
+        const id = hashId(item.guid||item.link||title);
+        const srcImg = extractImage(item);
+        const topicImg = pickTopicPhoto(title, desc, det.category, id);
+        return {
+          id:id, title:title,
+          deck:desc.slice(0,220)||title,
+          content:desc||title,
+          keyTakeaways:[],
+          category:det.category, tags:[source],
+          prov:det.prov, kota:det.kota||'', pulau:det.island,
+          author:source,
+          publishedAt:isNaN(d)?new Date().toISOString():d.toISOString(),
+          readingTime:Math.max(1,Math.ceil((desc||title).split(/\s+/).length/180)),
+          image:srcImg || topicImg,
+          _topicImg:topicImg,
+          views:0, likes:0, isLead:false, isBreaking:false,
+          external:true, link:item.link
+        };
+      }).filter(a=>a.title);
+    }catch(e){ return []; }
+  }
+
+  async function loadRealNews(notify){
+    setLoadingNews(true);
+    let items=[];
+    try{
+      for(const feed of REAL_NEWS_FEEDS){
+        items = await fetchFeed(feed);
+        if(items.length) break;
+      }
+    }catch(e){ items=[]; }
+    setLoadingNews(false);
+    if(!items.length){
+      if(notify) alert('Gagal memuat berita terbaru. Periksa koneksi internet lalu coba lagi.');
+      return;
+    }
+    const fresh = items.filter(a=>!realIdsRef.current.has(a.id));
+    items.forEach(a=>realIdsRef.current.add(a.id));
+    if(fresh.length){
+      setRealArticles(prev=>[...fresh,...prev].sort((a,b)=>new Date(b.publishedAt)-new Date(a.publishedAt)).slice(0,60));
+      setNotifications(prev=>[{id:'ntf-'+Date.now(),title:fresh.length+' berita terbaru masuk',text:fresh[0].title,read:false},...prev].slice(0,40));
+      if(notify){
+        setToast(fresh[0]);
+        const tid=fresh[0].id;
+        window.setTimeout(()=>setToast(cur=>(cur&&cur.id===tid)?null:cur),8000);
+      }
+    }
+  }
+
+  useEffect(()=>{
+    realArticles.forEach(a=>realIdsRef.current.add(a.id));
+    loadRealNews(false);
+    const t=setInterval(()=>{ if(!document.hidden) loadRealNews(true); }, REAL_NEWS_REFRESH_MS);
+    return ()=>clearInterval(t);
+  },[]);
+
+  useEffect(()=>{
+    function tryOpenAdmin(){
+      if(unlocked) setShowAdmin(true);
+      else { setSecretInput(''); setShowSecretPrompt(true); }
+    }
+    function onKey(e){
+      if(e.ctrlKey && e.shiftKey && (e.key==='A'||e.key==='a')){ e.preventDefault(); tryOpenAdmin(); return; }
+      const tag=(e.target.tagName||'').toLowerCase();
+      if(tag==='input'||tag==='textarea'||tag==='select') return;
+      if(e.key && e.key.length===1){
+        keyBufferRef.current=(keyBufferRef.current+e.key.toLowerCase()).slice(-10);
+        if(keyBufferRef.current.endsWith('admin')){ keyBufferRef.current=''; tryOpenAdmin(); }
+      }
+    }
+    window.addEventListener('keydown',onKey);
+    return ()=>window.removeEventListener('keydown',onKey);
+  },[unlocked]);
+
+  useEffect(()=>{
+    function onKey(e){
+      if(e.key==='Escape'){
+        setShowRegionMenu(false); setShowAdmin(false); setShowSecretPrompt(false);
+        setShowNotifications(false); setShowBookmarks(false);
+        setSelectedArticle(prev=>{
+          if(prev){ window.speechSynthesis&&window.speechSynthesis.cancel(); setIsReading(false); return null; }
+          return prev;
+        });
+      }
+    }
+    window.addEventListener('keydown',onKey);
+    return ()=>window.removeEventListener('keydown',onKey);
+  },[]);
+
+  useEffect(()=>{
+    if(!showRegionMenu) return;
+    function onDocClick(e){
+      if(e.target.closest && !e.target.closest('[data-region-menu]')) setShowRegionMenu(false);
+    }
+    document.addEventListener('mousedown',onDocClick);
+    return ()=>document.removeEventListener('mousedown',onDocClick);
+  },[showRegionMenu]);
+
+  useEffect(()=>{
+    const anyModal = selectedArticle||showAdmin||showSecretPrompt||showNotifications||showBookmarks;
+    document.body.style.overflow = anyModal?'hidden':'';
+    return ()=>{ document.body.style.overflow=''; };
+  },[selectedArticle,showAdmin,showSecretPrompt,showNotifications,showBookmarks]);
+
+  useEffect(()=>{
+    if(selectedArticle){
+      const el = document.getElementById('article-page');
+      if(el) el.scrollTop = 0;
+    }
+  },[selectedArticle]);
+
+  const todayLabel = new Intl.DateTimeFormat('id-ID',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}).format(new Date());
+
+  function getStats(a){
+    const b = baseStats(a.id);
+    const e = engagement[a.id] || {};
+    const baseViews = Math.max(a.views||0, b.views);
+    const baseLikes = (a.likes&&a.likes>0) ? a.likes : b.likes;
+    const myComments = e.comments || [];
+    return {
+      views: baseViews + (e.views||0),
+      likes: Math.max(0, baseLikes + (e.likes||0)),
+      comments: myComments.length,
+      shares: b.shares + (e.shares||0)
+    };
+  }
+  function getComments(a){
+    if(a.external) return (engagement[a.id]||{}).comments || [];
+    const mine = (engagement[a.id]||{}).comments || [];
+    return [...(a.comments||[]), ...mine];
+  }
+
+  const allArticles = useMemo(()=>[...realArticles,...localArticles].sort((a,b)=>new Date(b.publishedAt)-new Date(a.publishedAt)),[realArticles,localArticles]);
+
+  const filteredArticles = useMemo(()=>{
+    let data=[...allArticles];
+    if(activeCategory!=='Semua') data=data.filter(a=>a.category===activeCategory);
+    if(activeRegion!=='Semua Daerah') data=data.filter(a=>a.prov===activeRegion||a.kota===activeRegion);
+    if(selectedIsland!=='Semua') data=data.filter(a=>a.pulau===selectedIsland);
+    if(selectedTag) data=data.filter(a=>(a.tags||[]).includes(selectedTag));
+    if(searchQuery.trim()){
+      const q=searchQuery.toLowerCase();
+      data=data.filter(a=>(a.title+' '+a.deck+' '+a.content+' '+a.author+' '+(a.tags||[]).join(' ')).toLowerCase().includes(q));
+    }
+    return data;
+  },[allArticles,activeCategory,activeRegion,selectedIsland,selectedTag,searchQuery]);
+
+  const hasActiveFilter = activeCategory!=='Semua' || activeRegion!=='Semua Daerah' || selectedIsland!=='Semua' || !!selectedTag || !!searchQuery.trim();
+  const displayList = useMemo(()=>{
+    if(hasActiveFilter) return filteredArticles;
+    return filteredArticles
+      .map(a=>({a, k:hashStr(a.id+'|'+visitorSeed)}))
+      .sort((x,y)=>x.k-y.k)
+      .map(o=>o.a);
+  },[filteredArticles, visitorSeed, hasActiveFilter]);
+
+  const leadArticle = displayList[0];
+  const secondaryArticles = displayList.slice(1,3);
+  const remainingArticles = displayList.slice(3);
+
+  const popularArticles = useMemo(()=>[...allArticles].sort((a,b)=>getStats(b).views-getStats(a).views).slice(0,5),[allArticles,engagement]);
+  const bookmarkedArticles = allArticles.filter(a=>bookmarks.includes(a.id));
+  const unread = notifications.filter(n=>!n.read).length;
+
+  const tickerList = realArticles.length ? realArticles.slice(0,10) : localArticles.filter(a=>a.isBreaking);
+
+  const relatedArticles = useMemo(()=>{
+    if(!selectedArticle) return [];
+    return allArticles
+      .filter(a=>a.id!==selectedArticle.id&&(a.category===selectedArticle.category||a.prov===selectedArticle.prov))
+      .map(a=>({a, k:hashStr(a.id+'|rel|'+visitorSeed)}))
+      .sort((x,y)=>x.k-y.k).map(o=>o.a)
+      .slice(0,3);
+  },[allArticles,selectedArticle,visitorSeed]);
+
+    function openArticle(article){
+    if(window.speechSynthesis) window.speechSynthesis.cancel();
+    setIsReading(false);
+    setEngagement(prev=>Object.assign({}, prev, {
+      [article.id]: Object.assign({}, prev[article.id]||{}, { views:((prev[article.id]||{}).views||0)+1 })
+    }));
+    setSelectedArticle(Object.assign({}, article));
+    setCommentText('');
+    try{
+      history.replaceState(null,'','#'+(article.slug||article.id));
+      document.title = article.title+' - '+SITE_NAME;
+    }catch(e){}
+  }
+    function closeReader(){
+    if(window.speechSynthesis) window.speechSynthesis.cancel();
+    setIsReading(false);
+    setSelectedArticle(null);
+    try{
+      history.replaceState(null,'',location.pathname + location.search);
+      document.title = SITE_NAME+' - Portal Berita Nasional';
+    }catch(e){}
+  }
+
+  /* Buka berita otomatis saat link bagikan diklik orang lain */
+  useEffect(()=>{
+    if(!allArticles.length || selectedArticle) return;
+    const h = (window.location.hash||'').toLowerCase();
+    let key = (h && h.length>=2) ? h.slice(1) : '';
+    if(!key){
+      try{ key = (new URLSearchParams(window.location.search||'').get('berita')||'').toLowerCase(); }catch(e){}
+    }
+    if(!key) return;
+    const found = allArticles.find(a=>
+      (a.id||'').toLowerCase()===key ||
+      (a.slug||'').toLowerCase()===key ||
+      (a.title||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'')===key
+    );
+    if(found) openArticle(found);
+  },[allArticles]);
+  function toggleBookmark(id){
+    setBookmarks(prev=>prev.includes(id)?prev.filter(x=>x!==id):[...prev,id]);
+  }
+  function toggleLike(id){
+    const has=likedIds.includes(id);
+    setLikedIds(prev=>has?prev.filter(x=>x!==id):[...prev,id]);
+    setEngagement(prev=>{
+      const cur = prev[id]||{};
+      return Object.assign({}, prev, {
+        [id]: Object.assign({}, cur, { likes: Math.max(0,(cur.likes||0)+(has?-1:1)) })
+      });
+    });
+  }
+  function addComment(id,text){
+    if(!text.trim()) return;
+    const comment={id:Date.now(),name:SITE_READER,text:text.trim(),createdAt:new Date().toISOString()};
+    setEngagement(prev=>{
+      const cur = prev[id]||{};
+      return Object.assign({}, prev, {
+        [id]: Object.assign({}, cur, { comments:[...(cur.comments||[]), comment] })
+      });
+    });
+    setCommentText('');
+  }
+  function countShare(id){
+    setEngagement(prev=>{
+      const cur = prev[id]||{};
+      return Object.assign({}, prev, {
+        [id]: Object.assign({}, cur, { shares:(cur.shares||0)+1 })
+      });
+    });
+  }
+  function speakArticle(article){
+    if(!('speechSynthesis' in window)){ alert('Browser belum mendukung fitur baca berita.'); return; }
+    window.speechSynthesis.cancel();
+    if(isReading){ setIsReading(false); return; }
+    const u=new SpeechSynthesisUtterance(article.title+'. '+(article.deck||'')+'. '+(article.content||''));
+    u.lang='id-ID'; u.rate=.95;
+    u.onend=()=>setIsReading(false);
+    u.onerror=()=>setIsReading(false);
+    setIsReading(true);
+    window.speechSynthesis.speak(u);
+  }
+    function shareArticle(article){
+    countShare(article.id);
+    const key = article.slug || article.id;
+    const base = window.location.href.split('#')[0].split('?')[0];
+    /* &v=2 = pemicu cache: membuat WhatsApp/Facebook mengambil meta TERBARU
+       (foto pratinjau baru) alih-alih memakai pratinjau lama yang tersimpan */
+    const url = base + '?berita=' + encodeURIComponent(key) + '&v=2#' + key;
+    const text = article.title+'\n'+(article.deck||'');
+    if(navigator.share){ navigator.share({title:article.title,text:text,url:url}).catch(()=>{}); }
+    else if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text+'\n'+url).then(()=>alert('Link berita berhasil disalin!')).catch(()=>alert(url));
+    } else alert(url);
+  }
+  function openExternal(article){ window.open(article.link,'_blank','noopener'); }
+  function handleAdminInput(field,value){ setAdminForm(prev=>Object.assign({},prev,{[field]:value})); }
+  function resetAdmin(){ setAdminForm(EMPTY_ADMIN_FORM); }
+  function editArticle(article){
+    setAdminForm({
+      id:article.id, title:article.title, deck:article.deck, content:article.content,
+      category:article.category, prov:article.prov, kota:article.kota||'',
+      image:article.image||'', tags:(article.tags||[]).join(', '),
+      isLead:!!article.isLead, isBreaking:!!article.isBreaking
+    });
+  }
+  function deleteArticle(id){
+    if(!window.confirm('Hapus berita ini?')) return;
+    setLocalArticles(prev=>prev.filter(a=>a.id!==id));
+    setBookmarks(prev=>prev.filter(x=>x!==id));
+    setSelectedArticle(prev=>prev&&prev.id===id?null:prev);
+  }
+  function resetAllData(){
+    if(!window.confirm('Muat ulang semua data awal? Berita yang dibuat lewat Panel Redaksi akan dihapus.')) return;
+    Object.values(STORAGE).forEach(k=>{ try{localStorage.removeItem(k);}catch(e){} });
+    window.location.reload();
+  }
+  function saveArticle(){
+    if(!adminForm.title.trim()||!adminForm.content.trim()){ alert('Judul dan isi berita wajib diisi.'); return; }
+    const det=detectRegionAndCategory(adminForm.title,adminForm.content);
+    const existing=adminForm.id?localArticles.find(a=>a.id===adminForm.id):null;
+    const data={
+      id:adminForm.id||('art-'+Date.now()),
+      title:adminForm.title.trim(),
+      slug:adminForm.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''),
+      deck:adminForm.deck.trim()||adminForm.content.trim().slice(0,140),
+      content:adminForm.content.trim(),
+      keyTakeaways:adminForm.content.replace(/\n+/g,' ').split('.').map(x=>x.trim()).filter(Boolean).slice(0,3),
+      category:adminForm.category||det.category,
+      tags:adminForm.tags.split(',').map(x=>x.trim()).filter(Boolean),
+      prov:adminForm.prov||det.prov,
+      kota:adminForm.kota||det.kota||'',
+      pulau:PROV_TO_ISLAND[adminForm.prov]||det.island||'Nasional',
+      author:SITE_AUTHOR,
+      readingTime:Math.max(1,Math.ceil(adminForm.content.trim().split(/\s+/).length/180)),
+      image:fotoPath(adminForm.image),
+      isLead:!!adminForm.isLead, isBreaking:!!adminForm.isBreaking
+    };
+    setLocalArticles(prev=>{
+      if(existing) return prev.map(a=>a.id===data.id?Object.assign({},a,data):a);
+      return [Object.assign({},data,{publishedAt:new Date().toISOString(),views:0,likes:0,comments:[]}),...prev];
+    });
+    if(!existing){
+      setNotifications(prev=>[{id:'ntf-'+Date.now(),title:'Berita baru diterbitkan',text:data.title,read:false},...prev].slice(0,40));
+    }
+    resetAdmin();
+  }
+  function markNotificationsRead(){ setNotifications(prev=>prev.map(n=>Object.assign({},n,{read:true}))); }
+  function clearNotifications(){ setNotifications([]); }
+  function chooseRegion(region){ setActiveRegion(region); setSelectedIsland('Semua'); setShowRegionMenu(false); }
+  function resetFilters(){
+    setActiveCategory('Semua'); setActiveRegion('Semua Daerah');
+    setSelectedIsland('Semua'); setSelectedTag(null); setSearchQuery('');
+  }
+  function reshuffle(){
+    const s = Math.random().toString(36).slice(2,10);
+    safeSetSession('inw_seed', s);
+    setVisitorSeed(s);
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  function handleLogoClick(){
+    resetFilters();
+    logoClicksRef.current.count++;
+    clearTimeout(logoClicksRef.current.timer);
+    logoClicksRef.current.timer=setTimeout(()=>{logoClicksRef.current.count=0;},800);
+    if(logoClicksRef.current.count>=3){
+      logoClicksRef.current.count=0;
+      if(unlocked) setShowAdmin(true);
+      else { setSecretInput(''); setShowSecretPrompt(true); }
+    }
+  }
+  function submitSecret(e){
+    e.preventDefault();
+    if(secretInput===ADMIN_PASSWORD){
+      setUnlocked(true); safeSetSession('inw_admin','1');
+      setShowSecretPrompt(false); setSecretInput(''); setShowAdmin(true);
+    } else { alert('Kode salah. Akses ditolak.'); setSecretInput(''); }
+  }
+  function exitAdminMode(){ setUnlocked(false); safeSetSession('inw_admin',null); setShowAdmin(false); }
+  function clickToast(){ if(toast.external) openExternal(toast); else openArticle(toast); setToast(null); }
+
+  const selStats = selectedArticle ? getStats(selectedArticle) : null;
+  const selComments = selectedArticle ? getComments(selectedArticle) : [];
+
+  return (
+    <div className="min-h-screen w-full bg-[#F7F4EE] text-stone-800 overflow-x-hidden">
+
+      {/* TOP RIBBON */}
+      <div className="border-b border-stone-200 bg-stone-900 text-stone-100">
+        <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="min-h-9 flex items-center justify-between gap-3 text-[10px] sm:text-[11px] uppercase tracking-wider">
+            <div className="flex items-center gap-3 min-w-0">
+              <span className="whitespace-nowrap">{todayLabel}</span>
+              <span className="hidden md:inline text-stone-500">•</span>
+              <span className="hidden md:inline truncate">Liputan Terkini 38 Provinsi Indonesia</span>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <span className="hidden sm:inline">Indonesia</span>
+              <span className="hidden sm:inline">WIB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* HEADER — LOGO ANIMASI */}
+      <header className="sticky top-0 z-40 bg-[#F7F4EE]/95 backdrop-blur-sm border-b border-stone-300">
+        <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="flex items-center justify-between gap-2 min-w-0">
+              <button onClick={handleLogoClick} className="min-w-0 text-left" title="Beranda">
+                <AnimatedLogo src={LOCAL_ASSETS.logoUtama} fallback={LOCAL_ASSETS.logo}
+                  className="h-14 sm:h-18 lg:h-24 max-w-[75vw]" />
+              </button>
+
+              <div className="relative shrink-0" data-region-menu>
+                <button onClick={()=>setShowRegionMenu(x=>!x)} className="px-3 py-2 rounded-xl border border-stone-300 bg-white text-[11px] sm:text-xs font-bold whitespace-nowrap">
+                  {activeRegion==='Semua Daerah'?'Indonesia':activeRegion} ▾
+                </button>
+                {showRegionMenu && (
+                  <div className="absolute right-0 top-11 z-50 w-[calc(100vw-1.5rem)] max-w-sm max-h-[70vh] overflow-y-auto rounded-2xl border border-stone-300 bg-[#FDFBF7] shadow-2xl p-3">
+                    <button onClick={()=>chooseRegion('Semua Daerah')} className="w-full text-left px-3 py-2 rounded-xl hover:bg-stone-100 font-bold text-sm">Semua Daerah</button>
+                    {Object.entries(INDONESIA_ISLANDS).map(([island,provinces])=>(
+                      <div key={island} className="mt-3">
+                        <div className="px-3 py-1 text-[10px] uppercase tracking-widest font-black text-stone-400">{island}</div>
+                        {provinces.map(p=>(
+                          <button key={p} onClick={()=>chooseRegion(p)} className="w-full text-left px-3 py-2 rounded-xl hover:bg-stone-100 text-xs">{p}</button>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 justify-end">
+              <div className="hidden lg:flex items-center border border-stone-300 bg-white rounded-xl px-3 w-52">
+                <span className="text-stone-400 mr-2">⌕</span>
+                <input value={searchQuery} onChange={e=>setSearchQuery(e.target.value)} placeholder="Cari berita..." className="w-full py-2 bg-transparent outline-none text-xs" />
+              </div>
+              <button onClick={()=>setShowBookmarks(true)} className="relative w-9 h-9 rounded-xl border border-stone-300 bg-white" title="Bookmark">🔖
+                {bookmarks.length>0 && <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[9px] rounded-full px-1">{bookmarks.length}</span>}
+              </button>
+              <button onClick={()=>{setShowNotifications(true);markNotificationsRead();}} className="relative w-9 h-9 rounded-xl border border-stone-300 bg-white" title="Notifikasi">🔔
+                {unread>0 && <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[9px] rounded-full px-1">{unread}</span>}
+              </button>
+            </div>
+          </div>
+
+          <div className="hidden md:flex items-center gap-1 pt-3 overflow-x-auto no-scrollbar">
+            {ALL_CATEGORIES.map(cat=>(
+              <button key={cat} onClick={()=>setActiveCategory(cat)}
+                className={"px-3 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap "+(activeCategory===cat?'bg-stone-900 text-white':'text-stone-600 hover:bg-stone-200')}>
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      {/* POPULAR REGIONS */}
+      <div className="border-b border-stone-200 bg-[#EEE9DF]">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 flex gap-2 overflow-x-auto no-scrollbar">
+          <button onClick={()=>chooseRegion('Semua Daerah')}
+            className={"shrink-0 px-3 py-1 rounded-full border text-[10px] font-bold "+(activeRegion==='Semua Daerah'?'bg-stone-900 text-white border-stone-900':'bg-white border-stone-200 hover:border-stone-500')}>Semua</button>
+          {POPULAR_REGIONS.map(region=>(
+            <button key={region} onClick={()=>chooseRegion(region)}
+              className={"shrink-0 px-3 py-1 rounded-full border text-[10px] font-bold "+(activeRegion===region?'bg-stone-900 text-white border-stone-900':'bg-white border-stone-200 hover:border-stone-500')}>{region}</button>
+          ))}
+        </div>
+      </div>
+
+      {/* RUNNING TEXT */}
+      {tickerList.length>0 && (
+        <div className="bg-red-700 text-white flex items-stretch overflow-hidden">
+          <div className="shrink-0 bg-red-800 flex items-center gap-1.5 px-3 sm:px-4">
+            <span className="w-2 h-2 rounded-full bg-white live-dot"></span>
+            <span className="text-[9px] sm:text-[10px] font-black tracking-widest">TERKINI</span>
+          </div>
+          <div className="ticker-wrap overflow-hidden flex-1">
+            <div className="ticker-track py-2" style={{animationDuration:(Math.max(30,tickerList.length*9))+'s'}}>
+              {[0,1].map(copy=>(
+                <div key={copy} className="flex shrink-0 items-center" aria-hidden={copy===1}>
+                  {tickerList.map((a,i)=>(
+                    <button key={copy+'-'+i+'-'+a.id} onClick={()=>openArticle(a)}
+                      className="mx-5 sm:mx-7 inline-flex items-center gap-2 text-[11px] sm:text-xs whitespace-nowrap hover:underline">
+                      <span className="w-1 h-1 rounded-full bg-red-200 shrink-0"></span>
+                      <span className="font-bold">{a.title}</span>
+                      {a.external && <span className="text-red-200 text-[9px]">({a.author})</span>}
+                    </button>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <main className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-8">
+
+        {/* MOBILE SEARCH */}
+        <div className="lg:hidden flex items-center border border-stone-300 bg-white rounded-xl px-3">
+          <span className="text-stone-400 mr-2">⌕</span>
+          <input value={searchQuery} onChange={e=>setSearchQuery(e.target.value)} placeholder="Cari berita..." className="w-full py-2.5 bg-transparent outline-none text-sm" />
+        </div>
+
+        {/* FILTER STATUS */}
+        <div className="flex flex-wrap items-center gap-2 text-[11px]">
+          <span className="text-stone-500">Beranda</span><span>/</span><span className="font-bold">{activeCategory}</span>
+          {activeRegion!=='Semua Daerah' && <span><span className="text-stone-400">/</span> <span className="font-bold">{activeRegion}</span></span>}
+          {selectedIsland!=='Semua' && <span><span className="text-stone-400">/</span> <span className="font-bold">{selectedIsland}</span></span>}
+          {selectedTag && <span><span className="text-stone-400">/</span> <span className="font-bold">#{selectedTag}</span></span>}
+          {(hasActiveFilter) && <button onClick={resetFilters} className="ml-auto underline text-stone-500">Reset</button>}
+        </div>
+
+        {/* LEAD */}
+        {leadArticle ? (
+          <section className="grid lg:grid-cols-[1.5fr_1fr] gap-5">
+            <article onClick={()=>openArticle(leadArticle)}
+              className="group cursor-pointer rounded-3xl overflow-hidden border border-stone-300 bg-stone-900 text-white relative min-h-[360px] sm:min-h-[460px]">
+              <ArticleImg article={leadArticle}
+                className="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-[1.03] transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="bg-red-600 px-2 py-1 rounded text-[9px] font-black uppercase">{leadArticle.category}</span>
+                  <span className="bg-white/90 text-stone-800 px-2 py-1 rounded text-[9px] font-black uppercase">{leadArticle.author}</span>
+                </div>
+                <h2 className="font-serif font-black text-2xl sm:text-4xl lg:text-5xl leading-tight break-anywhere">{leadArticle.title}</h2>
+                <p className="mt-3 text-sm sm:text-base text-stone-200 max-w-2xl break-anywhere">{leadArticle.deck}</p>
+                <div className="mt-5 flex flex-wrap gap-3 text-[10px] text-stone-300">
+                  <span>{leadArticle.author}</span><span>•</span>
+                  <span>{formatViews(getStats(leadArticle).views)} dibaca</span><span>•</span>
+                  <span>{leadArticle.readingTime} menit baca</span>
+                </div>
+              </div>
+            </article>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-5">
+              {secondaryArticles.map(a=>(
+                <article key={a.id} onClick={()=>openArticle(a)}
+                  className="group cursor-pointer grid grid-cols-[120px_1fr] sm:grid-cols-[180px_1fr] lg:grid-cols-[150px_1fr] gap-4 bg-white border border-stone-300 rounded-2xl overflow-hidden">
+                  <div className="h-full min-h-[140px] overflow-hidden">
+                    <ArticleImg article={a} className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500" />
+                  </div>
+                  <div className="p-3 sm:p-4 flex flex-col justify-center min-w-0">
+                    <span className="text-[9px] font-black uppercase tracking-wider text-red-700">{a.category}</span>
+                    <h3 className="font-serif font-black text-lg sm:text-xl leading-tight mt-1 break-anywhere">{a.title}</h3>
+                    <p className="text-[11px] text-stone-500 mt-2 line-clamp-2">{a.deck}</p>
+                    <span className="text-[9px] text-stone-400 mt-3">{formatViews(getStats(a).views)} dibaca</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : (
+          <div className="py-20 text-center text-stone-500">Berita tidak ditemukan.</div>
+        )}
+
+        {/* ISLAND EXPLORER */}
+        <section>
+          <div className="text-[10px] uppercase tracking-widest font-black text-red-700">Jelajah Indonesia</div>
+          <h2 className="font-serif text-2xl sm:text-3xl font-black mb-3">Berita Berdasarkan Wilayah</h2>
+          <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+            <button onClick={()=>setSelectedIsland('Semua')}
+              className={"shrink-0 px-4 py-2 rounded-xl border text-xs font-bold "+(selectedIsland==='Semua'?'bg-stone-900 text-white':'bg-white border-stone-300')}>Semua Pulau</button>
+            {Object.keys(INDONESIA_ISLANDS).map(i=>(
+              <button key={i} onClick={()=>setSelectedIsland(i)}
+                className={"shrink-0 px-4 py-2 rounded-xl border text-xs font-bold "+(selectedIsland===i?'bg-stone-900 text-white':'bg-white border-stone-300')}>
+                {i} <span className="opacity-50">({allArticles.filter(a=>a.pulau===i).length})</span>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* FEED + SIDEBAR */}
+        <section className="grid lg:grid-cols-[1fr_320px] gap-8">
+          <div>
+            <div className="flex items-center justify-between border-b border-stone-300 pb-3 mb-4">
+              <h2 className="font-serif text-2xl font-black">Berita Terkini</h2>
+              <div className="flex items-center gap-2">
+                {!hasActiveFilter && (
+                  <button onClick={reshuffle}
+                    className="text-[10px] px-2.5 py-1 rounded-full border border-stone-300 bg-white font-bold hover:border-stone-500"
+                    title="Acak ulang urutan berita">
+                    🔀 Acak
+                  </button>
+                )}
+                <button onClick={()=>loadRealNews(true)}
+                  className="text-[10px] px-2.5 py-1 rounded-full border border-stone-300 bg-white font-bold hover:border-stone-500">
+                  {loadingNews?'⏳ Memuat':'⟳ Terbaru'}
+                </button>
+                <span className="text-[10px] text-stone-500">{displayList.length} berita</span>
+              </div>
+            </div>
+
+            {loadingNews && realArticles.length===0 && (
+              <div className="py-10 text-center text-stone-500 text-sm">
+                <span className="inline-block w-2 h-2 rounded-full bg-red-600 live-dot mr-2"></span>
+                Memuat berita terbaru dari sumber nasional…
+              </div>
+            )}
+
+            <div className="space-y-5">
+              {remainingArticles.map(a=>{
+                const st = getStats(a);
+                return (
+                <article key={a.id} onClick={()=>openArticle(a)}
+                  className="grid grid-cols-[110px_1fr] sm:grid-cols-[190px_1fr] gap-4 pb-5 border-b border-stone-200 cursor-pointer group">
+                  <div className="h-28 sm:h-32 rounded-2xl overflow-hidden bg-stone-200">
+                    <ArticleImg article={a} className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap gap-2 text-[9px] font-black uppercase">
+                      <span className="text-red-700">{a.category}</span>
+                      <span className="text-stone-400">{a.prov}</span>
+                      {a.external && <span className="text-stone-500 normal-case">{a.author}</span>}
+                    </div>
+                    <h3 className="font-serif text-xl sm:text-2xl font-black leading-tight mt-1 break-anywhere">{a.title}</h3>
+                    <p className="text-xs sm:text-sm text-stone-500 mt-2 line-clamp-2">{a.deck}</p>
+                    <div className="mt-3 text-[9px] text-stone-400 flex flex-wrap gap-2">
+                      <span>{formatViews(st.views)} dibaca</span><span>•</span>
+                      <span>♥ {formatViews(st.likes)}</span><span>•</span>
+                      <span>💬 {st.comments}</span>
+                    </div>
+                  </div>
+                </article>
+              );})}
+              {!loadingNews && remainingArticles.length===0 && (
+                <div className="py-16 text-center text-stone-500">Tidak ada berita sesuai filter.</div>
+              )}
+            </div>
+          </div>
+
+          <aside className="space-y-5">
+            <div className="bg-white border border-stone-300 rounded-2xl p-4">
+              <h3 className="font-serif text-xl font-black border-b border-stone-200 pb-3 mb-3">Terpopuler</h3>
+              <div className="space-y-4">
+                {popularArticles.map((a,i)=>(
+                  <button key={a.id} onClick={()=>openArticle(a)} className="w-full text-left flex gap-3 group">
+                    <span className="font-serif text-3xl font-black text-stone-300">{String(i+1).padStart(2,'0')}</span>
+                    <div className="min-w-0">
+                      <div className="text-[9px] uppercase font-black text-red-700">{a.category}</div>
+                      <div className="font-serif font-black leading-tight group-hover:underline break-anywhere">{a.title}</div>
+                      <div className="text-[9px] text-stone-400 mt-1">{formatViews(getStats(a).views)} dibaca</div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="bg-stone-900 text-white rounded-2xl p-5">
+              <div className="flex justify-center pb-3 border-b border-stone-700">
+                <AnimatedLogo src={LOCAL_ASSETS.logoFooter} fallback={LOCAL_ASSETS.logoUtama}
+                  className="h-16 max-w-full" />
+              </div>
+              <h3 className="font-serif text-2xl font-black mt-3">Informasi Terpercaya</h3>
+              <p className="text-xs text-stone-300 mt-2">Menyajikan berita aktual dari 38 provinsi dengan mengedepankan ketelitian dan keterbukaan.</p>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      {/* FOOTER — LOGO ANIMASI */}
+      <footer className="bg-stone-950 text-white mt-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="sm:col-span-2">
+            <AnimatedLogo src={LOCAL_ASSETS.logoFooter} fallback={LOCAL_ASSETS.logoUtama}
+              className="h-20 sm:h-24 max-w-full" />
+            <p className="text-stone-400 text-sm leading-relaxed mt-4 max-w-xl">
+              Portal berita Indonesia yang menyajikan informasi aktual dari berbagai daerah dengan mengedepankan ketelitian, keberimbangan dan keterbukaan informasi.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-bold text-sm mb-3">Navigasi</h4>
+            <div className="space-y-2 text-xs text-stone-400">
+              {CATEGORIES.slice(1,7).map(c=>(
+                <button key={c} onClick={()=>{setActiveCategory(c);window.scrollTo({top:0,behavior:'smooth'});}} className="block hover:text-white">{c}</button>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h4 className="font-bold text-sm mb-3">Redaksi</h4>
+            <div className="space-y-2 text-xs text-stone-400">
+              <div>{SITE_AUTHOR}</div>
+              <div>Pedoman Media Siber</div>
+              <div>Kode Etik Jurnalistik</div>
+              <div>Hak Cipta</div>
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-stone-800">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 text-[10px] text-stone-500">
+            © {new Date().getFullYear()} {SITE_NAME}. Seluruh hak cipta dilindungi. <span className="ml-2 text-stone-600">saepul haris</span>
+          </div>
+        </div>
+      </footer>
+
+      {/* ===== HALAMAN ARTIKEL PENUH ===== */}
+      {selectedArticle && (
+        <div id="article-page" className="fixed inset-0 z-[100] bg-white overflow-y-auto">
+          <div className="sticky top-0 z-10 bg-white/95 backdrop-blur border-b border-stone-200">
+            <div className="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+              <button onClick={closeReader} className="flex items-center gap-2 text-sm font-bold hover:text-red-700 shrink-0">
+                <span className="text-lg">←</span> Kembali
+              </button>
+              <AnimatedLogo src={LOCAL_ASSETS.logoUtama} fallback={LOCAL_ASSETS.logo}
+                className="h-10 sm:h-12 max-w-[42vw] mx-2" />
+              <div className="flex items-center gap-1 shrink-0">
+                <button onClick={()=>shareArticle(selectedArticle)} className="px-2.5 py-2 rounded-lg border text-xs" title="Bagikan">↗</button>
+                <button onClick={()=>speakArticle(selectedArticle)} className="px-2.5 py-2 rounded-lg border text-xs" title="Dengarkan">{isReading?'⏹':'🔊'}</button>
+                <button onClick={()=>toggleBookmark(selectedArticle.id)} className="px-2.5 py-2 rounded-lg border text-xs" title="Simpan">{bookmarks.includes(selectedArticle.id)?'🔖':'📑'}</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-3xl mx-auto px-4 py-6 sm:py-10 pb-24">
+            <div className="flex flex-wrap items-center gap-2 text-[11px] font-black uppercase tracking-wider">
+              <span className="text-red-700">{selectedArticle.category}</span>
+              <span className="text-stone-300">/</span>
+              <span className="text-stone-500">{selectedArticle.prov}</span>
+              {selectedArticle.external && <span className="px-2 py-0.5 rounded bg-red-600 text-white normal-case">{selectedArticle.author}</span>}
+            </div>
+
+            <h1 className="font-serif text-3xl sm:text-5xl font-black leading-tight break-anywhere mt-3">
+              {selectedArticle.title}
+            </h1>
+            <p className="mt-4 text-lg text-stone-600 leading-relaxed font-serif">{selectedArticle.deck}</p>
+
+            <div className="mt-6 flex items-center gap-3 border-b border-stone-200 pb-5">
+              <div className="w-10 h-10 rounded-full bg-stone-900 text-white flex items-center justify-center font-black text-sm shrink-0">
+                {(selectedArticle.author||'R').charAt(0).toUpperCase()}
+              </div>
+              <div className="min-w-0">
+                <div className="text-sm font-bold break-anywhere">{selectedArticle.author}</div>
+                <div className="text-[11px] text-stone-400">Tim Redaksi • {selectedArticle.readingTime} menit baca</div>
+              </div>
+              <button onClick={()=>setFontSize(x=>Math.min(25,x+1))} className="ml-auto px-2.5 py-1.5 rounded-lg border text-xs font-bold" title="Perbesar teks">A+</button>
+              <button onClick={()=>setFontSize(x=>Math.max(15,x-1))} className="px-2.5 py-1.5 rounded-lg border text-xs font-bold" title="Perkecil teks">A−</button>
+            </div>
+
+            <figure className="mt-6">
+              <div className="rounded-2xl overflow-hidden bg-stone-100">
+                <ArticleImg article={selectedArticle} className="w-full max-h-[480px] object-cover" />
+              </div>
+              <figcaption className="mt-2 text-[11px] text-stone-400">
+                Foto: {selectedArticle.external ? selectedArticle.author+' (sumber asli)' : SITE_AUTHOR}
+              </figcaption>
+            </figure>
+
+            <div className="mt-5 flex flex-wrap gap-3 text-[11px] text-stone-500 font-bold">
+              <span>👁 {formatViews(selStats.views)} dibaca</span>
+              <span>♥ {formatViews(selStats.likes)} suka</span>
+              <span>💬 {selComments.length} komentar</span>
+              <span>↗ {formatViews(selStats.shares)} dibagikan</span>
+            </div>
+
+            {selectedArticle.external && (
+              <a href={selectedArticle.link} target="_blank" rel="noreferrer"
+                className="mt-6 flex items-center justify-between bg-stone-900 text-white rounded-xl px-4 py-3 text-xs font-bold hover:bg-stone-700">
+                <span>Baca versi lengkap di {selectedArticle.author} ↗</span>
+                <span>→</span>
+              </a>
+            )}
+
+            {(selectedArticle.keyTakeaways||[]).length>0 && (
+              <div className="mt-7 p-4 sm:p-5 rounded-2xl bg-[#EEE9DF]">
+                <div className="text-[10px] uppercase tracking-widest font-black mb-2">Poin Utama</div>
+                <ul className="space-y-2 text-sm">
+                  {selectedArticle.keyTakeaways.map((x,i)=><li key={i}>• {x}</li>)}
+                </ul>
+              </div>
+            )}
+
+            <div className="mt-8">
+              <ArticleBody content={selectedArticle.content} fontSize={fontSize} />
+            </div>
+
+            <div className="flex flex-wrap gap-2 mt-8 pt-6 border-t border-stone-200">
+              {(selectedArticle.tags||[]).map(tag=>(
+                <button key={tag} onClick={()=>{setSelectedTag(tag);closeReader();}} className="px-3 py-1.5 rounded-full bg-stone-100 border text-[11px] font-bold hover:border-stone-500">#{tag}</button>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2 mt-5">
+              <button onClick={()=>toggleLike(selectedArticle.id)}
+                className={"px-5 py-2.5 rounded-xl text-xs font-bold "+(likedIds.includes(selectedArticle.id)?'bg-red-600 text-white':'bg-stone-900 text-white')}>
+                ♥ {likedIds.includes(selectedArticle.id) ? 'Disukai' : 'Suka'} ({formatViews(selStats.likes)})
+              </button>
+              <button onClick={()=>toggleBookmark(selectedArticle.id)} className="px-5 py-2.5 rounded-xl border text-xs font-bold">
+                {bookmarks.includes(selectedArticle.id)?'🔖 Tersimpan':'🔖 Simpan'}
+              </button>
+              <button onClick={()=>shareArticle(selectedArticle)} className="px-5 py-2.5 rounded-xl border text-xs font-bold">
+                ↗ Bagikan ({formatViews(selStats.shares)})
+              </button>
+            </div>
+
+            {relatedArticles.length>0 && (
+              <div className="mt-10 pt-6 border-t-2 border-stone-900">
+                <h3 className="font-serif text-2xl font-black mb-4">Berita Terkait</h3>
+                <div className="grid sm:grid-cols-3 gap-4">
+                  {relatedArticles.map(a=>(
+                    <button key={a.id} onClick={()=>openArticle(a)} className="text-left bg-white border border-stone-200 rounded-xl overflow-hidden group hover:border-stone-400">
+                      <div className="h-28 overflow-hidden bg-stone-100">
+                        <ArticleImg article={a} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                      </div>
+                      <div className="p-3">
+                        <div className="text-[9px] font-black uppercase text-red-700">{a.category}</div>
+                        <div className="font-serif font-black text-sm leading-tight mt-1 break-anywhere">{a.title}</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="mt-10 pt-6 border-t-2 border-stone-900">
+              <h3 className="font-serif text-2xl font-black">Komentar ({selComments.length})</h3>
+              <div className="mt-4 space-y-3">
+                {selComments.length===0 && <p className="text-xs text-stone-500">Belum ada komentar. Jadilah yang pertama!</p>}
+                {selComments.map(c=>(
+                  <div key={c.id} className="bg-[#FDFBF7] border border-stone-200 rounded-xl p-3">
+                    <div className="text-[10px] font-black text-stone-700">{c.name}</div>
+                    <p className="text-sm mt-1 break-anywhere">{c.text}</p>
+                  </div>
+                ))}
+              </div>
+              <form onSubmit={e=>{e.preventDefault();addComment(selectedArticle.id,commentText);}} className="mt-4 flex gap-2">
+                <input value={commentText} onChange={e=>setCommentText(e.target.value)} placeholder="Tulis komentar..."
+                  className="flex-1 border border-stone-300 rounded-xl px-3 py-2.5 text-sm bg-white focus:outline-none focus:border-stone-500" />
+                <button type="submit" className="px-5 py-2.5 rounded-xl bg-stone-900 text-white text-xs font-bold">Kirim</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* KOTAK KODE RAHASIA */}
+      {showSecretPrompt && (
+        <div className="fixed inset-0 z-[200] bg-black/70 flex items-center justify-center p-4" onClick={()=>setShowSecretPrompt(false)}>
+          <div className="bg-[#FDFBF7] rounded-2xl p-6 w-full max-w-xs shadow-2xl" onClick={e=>e.stopPropagation()}>
+            <div className="text-[10px] uppercase tracking-widest font-black text-stone-400">🔒 Akses Terbatas</div>
+            <h3 className="font-serif text-2xl font-black mt-1">Mode Redaksi</h3>
+            <p className="text-xs text-stone-500 mt-1">Masukkan kode untuk membuka panel redaksi.</p>
+            <form onSubmit={submitSecret} className="mt-4 space-y-3">
+              <input type="password" autoFocus value={secretInput} onChange={e=>setSecretInput(e.target.value)}
+                placeholder="Kode rahasia..." className="w-full border border-stone-300 rounded-xl px-3 py-2 text-sm bg-white text-center tracking-widest focus:outline-none focus:border-stone-500" />
+              <div className="flex gap-2">
+                <button type="submit" className="flex-1 bg-stone-900 text-white rounded-xl py-2 text-xs font-black">Buka Panel</button>
+                <button type="button" onClick={()=>setShowSecretPrompt(false)} className="px-4 rounded-xl border text-xs font-bold">Batal</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* PANEL REDAKSI */}
+      {showAdmin && unlocked && (
+        <div className="fixed inset-0 z-[130] bg-black/60 p-2 sm:p-6 flex items-start sm:items-center justify-center overflow-y-auto" onClick={()=>setShowAdmin(false)}>
+          <div className="w-full max-w-3xl bg-[#FDFBF7] rounded-2xl sm:rounded-3xl shadow-2xl my-4" onClick={e=>e.stopPropagation()}>
+            <div className="flex items-center justify-between p-4 border-b border-stone-200">
+              <h3 className="font-serif text-xl sm:text-2xl font-black">
+                Panel Redaksi 🔒
+                {adminForm.id && <span className="ml-2 text-[9px] bg-amber-200 text-amber-800 px-2 py-1 rounded align-middle">MODE EDIT</span>}
+              </h3>
+              <button onClick={()=>setShowAdmin(false)} className="w-9 h-9 rounded-lg bg-stone-900 text-white text-lg leading-none">×</button>
+            </div>
+
+            <form onSubmit={e=>{e.preventDefault();saveArticle();}} className="p-4 sm:p-6 space-y-4">
+              <label className="block">
+                <span className="text-[10px] font-black uppercase tracking-widest text-stone-500">Judul Berita *</span>
+                <input value={adminForm.title} onChange={e=>handleAdminInput('title',e.target.value)} placeholder="Tulis judul berita..."
+                  className="mt-1 w-full border border-stone-300 rounded-xl px-3 py-2 text-sm bg-white focus:outline-none focus:border-stone-500" />
+              </label>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <label className="block">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-stone-500">Kategori</span>
+                  <select value={adminForm.category} onChange={e=>handleAdminInput('category',e.target.value)} className="mt-1 w-full border border-stone-300 rounded-xl px-3 py-2 text-sm bg-white">
+                    {ALL_CATEGORIES.filter(c=>c!=='Semua').map(c=><option key={c} value={c}>{c}</option>)}
+                  </select>
+                </label>
+                <label className="block">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-stone-500">Provinsi</span>
+                  <select value={adminForm.prov} onChange={e=>handleAdminInput('prov',e.target.value)} className="mt-1 w-full border border-stone-300 rounded-xl px-3 py-2 text-sm bg-white">
+                    <option value="Nasional">Nasional</option>
+                    {ALL_PROVINCES.map(p=><option key={p} value={p}>{p}</option>)}
+                  </select>
+                </label>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <label className="block">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-stone-500">Kota</span>
+                  <input value={adminForm.kota} onChange={e=>handleAdminInput('kota',e.target.value)} placeholder="cth: Tangerang" className="mt-1 w-full border border-stone-300 rounded-xl px-3 py-2 text-sm bg-white" />
+                </label>
+                <label className="block">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-stone-500">Tag (pisahkan koma)</span>
+                  <input value={adminForm.tags} onChange={e=>handleAdminInput('tags',e.target.value)} placeholder="Ekonomi, UMKM" className="mt-1 w-full border border-stone-300 rounded-xl px-3 py-2 text-sm bg-white" />
+                </label>
+              </div>
+              <label className="block">
+                <span className="text-[10px] font-black uppercase tracking-widest text-stone-500">Ringkasan (Deck)</span>
+                <textarea value={adminForm.deck} onChange={e=>handleAdminInput('deck',e.target.value)} rows={2} placeholder="Ringkasan singkat..." className="mt-1 w-full border border-stone-300 rounded-xl px-3 py-2 text-sm bg-white" />
+              </label>
+              <label className="block">
+                <span className="text-[10px] font-black uppercase tracking-widest text-stone-500">Isi Berita * (Enter 2x = paragraf baru, tampil lengkap)</span>
+                <textarea value={adminForm.content} onChange={e=>handleAdminInput('content',e.target.value)} rows={10} placeholder="Tulis isi berita selengkap mungkin..." className="mt-1 w-full border border-stone-300 rounded-xl px-3 py-2 text-sm bg-white" />
+              </label>
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-stone-500">Foto — nama file di folder yang sama, URL internet, atau kosongkan</span>
+                <input value={adminForm.image} onChange={e=>handleAdminInput('image',e.target.value)} placeholder="Hut desa 43.jpg" className="mt-1 w-full border border-stone-300 rounded-xl px-3 py-2 text-sm bg-white" />
+              </div>
+              <div className="flex flex-wrap items-center gap-4">
+                <label className="flex items-center gap-2 text-xs font-bold">
+                  <input type="checkbox" checked={adminForm.isBreaking} onChange={e=>handleAdminInput('isBreaking',e.target.checked)} className="w-4 h-4" />
+                  Tandai BREAKING (masuk ticker)
+                </label>
+                <label className="flex items-center gap-2 text-xs font-bold">
+                  <input type="checkbox" checked={adminForm.isLead} onChange={e=>handleAdminInput('isLead',e.target.checked)} className="w-4 h-4" />
+                  Jadikan Berita Utama
+                </label>
+              </div>
+              <div className="flex gap-2 pt-1">
+                <button type="submit" className="flex-1 bg-stone-900 text-white rounded-xl py-2.5 text-xs font-black">{adminForm.id?'Simpan Perubahan':'Terbitkan Berita'}</button>
+                <button type="button" onClick={resetAdmin} className="px-4 rounded-xl border text-xs font-bold">Kosongkan</button>
+              </div>
+            </form>
+
+            <div className="border-t border-stone-200 p-4 sm:p-6">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <h4 className="font-serif text-lg font-black">Kelola Berita ({localArticles.length})</h4>
+                <div className="flex gap-2">
+                  <button onClick={resetAllData} className="text-[10px] px-2.5 py-1.5 rounded-lg border border-stone-300 font-bold hover:border-stone-500">⟲ Muat Ulang Data Awal</button>
+                  <button onClick={exitAdminMode} className="text-[10px] px-2.5 py-1.5 rounded-lg bg-red-600 text-white font-bold">Keluar Mode Redaksi</button>
+                </div>
+              </div>
+              <div className="max-h-56 overflow-y-auto space-y-2">
+                {localArticles.map(a=>(
+                  <div key={a.id} className="flex items-center gap-2 bg-white rounded-xl border border-stone-200 p-2">
+                    <div className="w-12 h-9 rounded-lg overflow-hidden shrink-0 bg-stone-100">
+                      <ArticleImg article={a} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1 min-w-0 text-xs font-bold truncate">{a.title}</div>
+                    <button onClick={()=>editArticle(a)} className="text-[10px] px-2.5 py-1 rounded-lg bg-stone-900 text-white font-bold shrink-0">Edit</button>
+                    <button onClick={()=>deleteArticle(a.id)} className="text-[10px] px-2.5 py-1 rounded-lg border border-stone-300 font-bold shrink-0">Hapus</button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* NOTIFIKASI */}
+      {showNotifications && (
+        <div className="fixed inset-0 z-[120] bg-black/60 flex justify-end" onClick={()=>setShowNotifications(false)}>
+          <aside className="w-full max-w-sm h-full bg-[#FDFBF7] shadow-2xl flex flex-col" onClick={e=>e.stopPropagation()}>
+            <div className="flex items-center justify-between p-4 border-b border-stone-200">
+              <h3 className="font-serif text-xl font-black">Notifikasi</h3>
+              <div className="flex gap-2">
+                <button onClick={clearNotifications} className="text-[10px] px-2.5 py-1.5 border border-stone-300 rounded-lg font-bold">Bersihkan</button>
+                <button onClick={()=>setShowNotifications(false)} className="w-8 h-8 rounded-lg bg-stone-900 text-white text-lg leading-none">×</button>
+              </div>
+            </div>
+            <div className="flex-1 overflow-y-auto p-4 space-y-3">
+              {notifications.length===0 && <p className="text-xs text-stone-500">Belum ada notifikasi.</p>}
+              {notifications.map(n=>(
+                <div key={n.id} className={"p-3 rounded-xl border "+(n.read?'border-stone-200 bg-white':'border-red-200 bg-red-50')}>
+                  <div className="text-[9px] font-black uppercase text-red-700">{n.title}</div>
+                  <div className="text-sm font-bold mt-1 break-anywhere">{n.text}</div>
+                </div>
+              ))}
+            </div>
+          </aside>
+        </div>
+      )}
+
+      {/* BOOKMARK */}
+      {showBookmarks && (
+        <div className="fixed inset-0 z-[120] bg-black/60 flex justify-end" onClick={()=>setShowBookmarks(false)}>
+          <aside className="w-full max-w-sm h-full bg-[#FDFBF7] shadow-2xl flex flex-col" onClick={e=>e.stopPropagation()}>
+            <div className="flex items-center justify-between p-4 border-b border-stone-200">
+              <h3 className="font-serif text-xl font-black">Bookmark ({bookmarkedArticles.length})</h3>
+              <button onClick={()=>setShowBookmarks(false)} className="w-8 h-8 rounded-lg bg-stone-900 text-white text-lg leading-none">×</button>
+            </div>
+            <div className="flex-1 overflow-y-auto p-4 space-y-3">
+              {bookmarkedArticles.length===0 && <p className="text-xs text-stone-500">Belum ada berita tersimpan.</p>}
+              {bookmarkedArticles.map(a=>(
+                <div key={a.id} className="flex gap-3 bg-white border border-stone-200 rounded-xl p-2.5">
+                  <div className="w-16 h-12 rounded-lg overflow-hidden shrink-0 bg-stone-100">
+                    <ArticleImg article={a} className="w-full h-full object-cover" />
+                  </div>
+                  <button onClick={()=>{setShowBookmarks(false);openArticle(a);}} className="flex-1 min-w-0 text-left">
+                    <div className="text-[9px] font-black uppercase text-red-700">{a.category}</div>
+                    <div className="font-serif font-black text-sm leading-tight break-anywhere">{a.title}</div>
+                  </button>
+                  <button onClick={()=>toggleBookmark(a.id)} className="text-xs px-2 self-start text-stone-400 hover:text-red-600">✕</button>
+                </div>
+              ))}
+            </div>
+          </aside>
+        </div>
+      )}
+
+      {/* TOAST */}
+      {toast && (
+        <div className="fixed bottom-4 right-4 z-[300] toast-in">
+          <button onClick={clickToast} className="bg-stone-900 text-white rounded-2xl shadow-2xl p-4 max-w-xs text-left border border-stone-700">
+            <div className="text-[9px] uppercase tracking-widest font-black text-red-400 mb-1 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 live-dot"></span> Berita Baru Masuk
+            </div>
+            <div className="font-serif font-black leading-tight text-sm break-anywhere">{toast.title}</div>
+            <div className="text-[10px] text-stone-400 mt-1">klik untuk baca →</div>
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Boundary><App /></Boundary>);
+</script>
+  <script data-cfasync="false" src="https://afders.org/1/92fa69e02e6551a790052302a27a109a"></script>
+  <script data-cfasync="false" src="https://bicea.org/14/252bb7e8dc3f9885f0879d7c4e8e0871"></script>
+<script>
+  atOptions = {
+    'key' : '84731edc60d30eca15e07c5969783b8b',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://bicea.org/22/84731edc60d30eca15e07c5969783b8b"></script>
+  </body>
+</html>

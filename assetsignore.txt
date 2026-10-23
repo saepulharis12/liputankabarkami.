@@ -1,0 +1,17 @@
+# .assetsignore — daftar file yang TIDAK di-upload sebagai aset publik website.
+# Aturannya sama seperti .gitignore. File-file ini tetap boleh ada di repo
+# GitHub, tetapi tidak akan bisa diakses publik lewat alamat website.
+worker.js
+wrangler.toml
+.assetsignore
+PANDUAN-PASANG.md
+README.md
+*.md
+*.tar.gz
+*.zip
+.git
+.gitignore
+.github
+node_modules
+package.json
+package-lock.json
